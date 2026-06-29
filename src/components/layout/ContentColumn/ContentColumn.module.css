@@ -1,0 +1,24 @@
+/* Unified content column — header and body share one alignment context. */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.body > * {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}

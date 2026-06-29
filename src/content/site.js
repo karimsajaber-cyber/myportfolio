@@ -13,7 +13,6 @@ export const site = {
 
   nav: [
     { label: "About", href: "#about" },
-    { label: "Work", href: "#projects" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
@@ -25,7 +24,7 @@ export const site = {
 };
 
 export const hero = {
-  headline: "Engineering products that solve real problems.",
+  headline: "I build full-stack products with engineering discipline and product awareness.",
   primaryCta: {
     label: "View my work",
     href: "#projects",
@@ -35,28 +34,7 @@ export const hero = {
     href: "#contact",
   },
   featuredProject: {
-    name: "PulseDesk",
-    problem:
-      "Support teams tracked requests across email and spreadsheets with no shared visibility.",
-    outcome:
-      "A unified operations dashboard improved response coordination and gave managers real-time case visibility.",
     href: "#projects",
-    image: null,
-    capabilities: [
-      "Python",
-      "Django",
-      "React",
-      "REST APIs",
-      "LLM Applications",
-      "Prompt Engineering",
-      "AI-Assisted Development",
-      "Customer Support",
-      "Technical Support",
-      "Product Thinking",
-      "Workflow Optimization",
-      "Problem Solving",
-      "API Integration",
-      "Git & GitHub",
-    ],
+    image: "/images/hero-portfolio-artwork.png",
   },
 };

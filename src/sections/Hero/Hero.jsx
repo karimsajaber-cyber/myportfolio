@@ -1,6 +1,5 @@
 import Button from "../../components/ui/Button";
 import { hero, site } from "../../content/site";
-import HeroProjectPreview from "./HeroProjectPreview";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -34,17 +33,27 @@ export default function Hero() {
             </nav>
 
             <div className={styles.navActions}>
-              <div className={styles.availability}>
-                <span className={styles.availabilityDot} aria-hidden="true" />
-                <span className={styles.availabilityText}>
-                  {site.availability}
-                </span>
-              </div>
+              <p className={styles.availability}>{site.availability}</p>
               <Button
                 variant="secondary"
                 href={site.resume.href}
                 className={styles.resumeBtn}
               >
+                <svg
+                  className={styles.resumeIcon}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" x2="12" y1="15" y2="3" />
+                </svg>
                 {site.resume.label}
               </Button>
             </div>
@@ -77,43 +86,21 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className={styles.previewZone}>
+            <aside className={styles.previewZone} aria-label="Portfolio showcase">
               <a
                 href={project.href}
                 className={styles.previewFrame}
-                aria-label={`View ${project.name} case study`}
+                aria-label="View portfolio projects"
               >
-                <div className={styles.previewAccent} aria-hidden="true" />
-
                 <div className={styles.previewVisual}>
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={`${project.name} product interface`}
-                      className={styles.previewImage}
-                    />
-                  ) : (
-                    <HeroProjectPreview />
-                  )}
-
-                  <div className={styles.previewOverlay}>
-                    <p className={styles.previewName}>{project.name}</p>
-                    <p className={styles.previewProblem}>{project.problem}</p>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt="Portfolio project showcase artwork"
+                    className={styles.previewImage}
+                  />
                 </div>
               </a>
-
-              <div className={styles.previewMeta}>
-                <p className={styles.previewOutcome}>{project.outcome}</p>
-                <ul className={styles.stackList} aria-label="Professional capabilities">
-                  {project.capabilities.map((capability) => (
-                    <li key={capability}>
-                      <span className={styles.stackTag}>{capability}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </aside>
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import Container from "../../components/layout/Container";
 import Section from "../../components/layout/Section";
+import SectionHeader from "../../components/layout/SectionHeader";
 import {
   capabilities,
   capabilitiesSection,
 } from "../../content/capabilities";
+import CapabilityIcon from "./CapabilityIcon";
 import styles from "./CoreCapabilities.module.css";
 
 export default function CoreCapabilities() {
@@ -14,13 +16,12 @@ export default function CoreCapabilities() {
       ariaLabelledby="capabilities-heading"
     >
       <Container>
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>{capabilitiesSection.eyebrow}</p>
-          <h2 id="capabilities-heading" className={styles.title}>
-            {capabilitiesSection.title}
-          </h2>
-          <p className={styles.intro}>{capabilitiesSection.intro}</p>
-        </header>
+        <SectionHeader
+          eyebrow={capabilitiesSection.eyebrow}
+          title={capabilitiesSection.title}
+          intro={capabilitiesSection.intro}
+          titleId="capabilities-heading"
+        />
 
         <ul className={styles.grid}>
           {capabilities.map((capability) => (
@@ -29,7 +30,15 @@ export default function CoreCapabilities() {
                 <div className={styles.cardAccent} aria-hidden="true" />
 
                 <div className={styles.cardBody}>
-                  <h3 className={styles.cardTitle}>{capability.title}</h3>
+                  <h3 className={styles.cardTitle}>
+                    <span className={styles.cardTitleInner}>
+                      <CapabilityIcon
+                        name={capability.icon}
+                        className={styles.cardTitleIcon}
+                      />
+                      <span>{capability.title}</span>
+                    </span>
+                  </h3>
                   <p className={styles.cardDescription}>
                     {capability.description}
                   </p>

@@ -50,17 +50,17 @@ export default function ProjectCard({ project, reversed = false }) {
           </h3>
 
           <div className={styles.storyBlock}>
-            <span className={styles.storyLabel}>Problem</span>
+            <span className={styles.storyLabel}>Challenge</span>
             <p className={styles.storyText}>{project.problem}</p>
           </div>
 
           <div className={styles.storyBlock}>
-            <span className={styles.storyLabel}>Solution</span>
+            <span className={styles.storyLabel}>Approach</span>
             <p className={styles.storyText}>{project.solution}</p>
           </div>
 
           <div className={styles.storyBlock}>
-            <span className={styles.storyLabel}>Outcome</span>
+            <span className={styles.storyLabel}>Impact</span>
             <p className={styles.storyText}>{project.outcome}</p>
           </div>
 

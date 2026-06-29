@@ -1,0 +1,106 @@
+.section {
+  background-color: var(--color-bg);
+  padding-top: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--space-5);
+  }
+}
+
+.band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 75%);
+  margin-inline: auto;
+}
+
+.link {
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-primary);
+}
+
+.connector {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: var(--space-8);
+  padding-inline: var(--space-3);
+}
+
+.node {
+  flex-shrink: 0;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background-color: var(--color-border-strong);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.line {
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: var(--color-border);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.link:hover + .connector .node,
+.connector:has(+ .link:hover) .node,
+.link:focus-visible + .connector .node,
+.connector:has(+ .link:focus-visible) .node {
+  background-color: var(--color-accent);
+  transform: scale(1.2);
+}
+
+.link:hover + .connector .line,
+.connector:has(+ .link:hover) .line,
+.link:focus-visible + .connector .line,
+.connector:has(+ .link:focus-visible) .line {
+  background-color: var(--color-border-strong);
+}
+
+@media (max-width: 640px) {
+  .band {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .connector {
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    min-height: var(--space-8);
+    padding-inline: 0;
+    padding-block: var(--space-2);
+  }
+
+  .line {
+    flex: 0 0 auto;
+    width: 1px;
+    height: var(--space-8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link,
+  .node,
+  .line {
+    transition: none;
+  }
+}

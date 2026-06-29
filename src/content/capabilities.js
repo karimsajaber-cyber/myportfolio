@@ -10,12 +10,14 @@ export const capabilitiesSection = {
 
 export const capabilities = [
   {
+    icon: "layers",
     title: "Full-Stack Engineering",
     description:
       "End-to-end product development — from data models and APIs to interfaces teams rely on every day.",
     items: ["Python", "Django", "React", "REST APIs", "MySQL", "SQLite"],
   },
   {
+    icon: "sparkles",
     title: "AI & Modern Development",
     description:
       "Designing intelligent features and shipping faster with disciplined, AI-assisted engineering workflows.",
@@ -27,6 +29,7 @@ export const capabilities = [
     ],
   },
   {
+    icon: "users",
     title: "Customer & Product",
     description:
       "Understanding how software performs for users, support teams, and the business behind the product.",
@@ -38,6 +41,7 @@ export const capabilities = [
     ],
   },
   {
+    icon: "shieldCheck",
     title: "Engineering Practices",
     description:
       "Clean architecture, reliable delivery, and standards that keep products maintainable as they grow.",
@@ -49,6 +53,7 @@ export const capabilities = [
     ],
   },
   {
+    icon: "lightbulb",
     title: "Problem Solving",
     description:
       "Breaking down complex technical and operational issues into clear, actionable solutions.",
@@ -60,6 +65,7 @@ export const capabilities = [
     ],
   },
   {
+    icon: "workflow",
     title: "Workflow Optimization",
     description:
       "Improving how teams work — streamlining processes, documentation, and the path from idea to production.",
