@@ -1,0 +1,43 @@
+:root {
+  /*
+   * Premium palette — warm neutrals tinted toward gold,
+   * deep royal blue primary, restrained champagne gold accent.
+   */
+
+  /* Background: warm limestone — softer than clinical #FAFAFA */
+  --color-bg: #f5f3ee;
+
+  /* Surfaces: clean white for cards and elevated panels */
+  --color-surface: #ffffff;
+
+  /* Ink: near-black with cool undertone — pairs with royal blue */
+  --color-text: #13161b;
+
+  /* Secondary text: balanced gray, WCAG AA on --color-bg */
+  --color-text-muted: #5a6270;
+
+  /* Subtle text: labels, meta */
+  --color-text-subtle: #7a828e;
+
+  /*
+   * Royal Blue: deep, authoritative — not the overused bright startup blue.
+   * Reads as confident and timeless on warm neutrals.
+   */
+  --color-primary: #1a3d9e;
+  --color-primary-hover: #153278;
+  --color-primary-soft: rgba(26, 61, 158, 0.08);
+
+  /*
+   * Soft Gold: desaturated champagne — accent only.
+   * Avoids brassy/yellow cheapness of brighter golds.
+   */
+  --color-accent: #b8a078;
+  --color-accent-soft: rgba(184, 160, 120, 0.14);
+
+  /* Warm borders that harmonize with the off-white background */
+  --color-border: #e0ddd6;
+  --color-border-strong: #cfcbc2;
+
+  /* Focus ring */
+  --color-focus: var(--color-primary);
+}
