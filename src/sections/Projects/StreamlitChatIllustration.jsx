@@ -5,54 +5,43 @@ export default function StreamlitChatIllustration() {
     <div
       className={styles.app}
       role="img"
-      aria-label="Streamlit chat application preview"
+      aria-label="Smart Study - Mock Chat application preview"
     >
-      <aside className={styles.sidebar} aria-hidden="true">
-        <p className={styles.sidebarTitle}>Navigation</p>
-        <span className={styles.sidebarItemActive}>Chat</span>
-        <span className={styles.sidebarItem}>History</span>
-        <span className={styles.sidebarItem}>Settings</span>
-      </aside>
+      <header className={styles.hero}>
+        <span className={styles.heroBadge}>AI Chat Interface</span>
+        <h4 className={styles.heroTitle}>Smart Study - Mock Chat</h4>
+        <p className={styles.heroCaption}>
+          Lightweight Streamlit chat prototype for study workflows
+        </p>
+      </header>
 
-      <div className={styles.main}>
-        <header className={styles.appHeader}>
-          <h4 className={styles.appTitle}>Streamlit Chat</h4>
-          <p className={styles.appCaption}>
-            Conversational interface powered by your LLM backend
+      <div className={styles.chatPanel} aria-hidden="true">
+        <div className={styles.messageUser}>
+          <span className={styles.messageRole}>You</span>
+          <p className={styles.messageBody}>
+            Summarize the key risks in this quarter&apos;s broker performance
+            report.
           </p>
-        </header>
-
-        <div className={styles.chat}>
-          <div className={styles.messageUser}>
-            <span className={styles.messageRole}>You</span>
-            <p className={styles.messageBody}>
-              Summarize the key risks in this quarter&apos;s broker performance
-              report.
-            </p>
-          </div>
-
-          <div className={styles.messageAssistant}>
-            <span className={styles.messageRole}>Assistant</span>
-            <p className={styles.messageBody}>
-              The report highlights three areas: slower response times in the
-              Gulf region, a 12% drop in lead conversion on mobile, and higher
-              churn among mid-tier partners. I can break each down by segment if
-              you want.
-            </p>
-          </div>
-
-          <div className={styles.messageUser}>
-            <span className={styles.messageRole}>You</span>
-            <p className={styles.messageBody}>
-              Focus on mobile conversion — what changed month over month?
-            </p>
-          </div>
         </div>
 
-        <div className={styles.chatInput} aria-hidden="true">
-          <span className={styles.chatInputField}>Ask a question…</span>
-          <span className={styles.chatInputAction} />
+        <div className={styles.messageAssistant}>
+          <span className={styles.messageRole}>Assistant</span>
+          <p className={styles.messageBody}>
+            Three areas stand out: slower Gulf response times, a 12% mobile
+            conversion drop, and higher mid-tier churn.
+          </p>
         </div>
+      </div>
+
+      <div className={styles.featureRow} aria-hidden="true">
+        <span className={styles.featureChip}>Context</span>
+        <span className={styles.featureChip}>Memory</span>
+        <span className={styles.featureChip}>Tools</span>
+      </div>
+
+      <div className={styles.chatInput} aria-hidden="true">
+        <span className={styles.chatInputField}>Ask a question…</span>
+        <span className={styles.chatInputAction} />
       </div>
     </div>
   );

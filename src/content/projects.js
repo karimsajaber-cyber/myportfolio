@@ -1,76 +1,110 @@
 import bitemenuImage from "../../review-screenshots/ss.png";
-import brokershubLandingImage from "../../review-screenshots/brokershub-landing.png";
+import brokershubPreviewImage from "../../review-screenshots/brokershub-preview.png";
 
-/**
- * Featured projects — replace placeholder strings with real copy when ready.
- * Image paths reuse files in /review-screenshots (no duplicates).
- */
 export const projectsSection = {
   eyebrow: "Case Studies",
   title: "Featured Projects",
   intro:
-    "[Section intro placeholder — a brief line on the kinds of products you build and the problems they solve.]",
+    "Product case studies focused on problem framing, implementation, and outcomes.",
 };
 
 export const projects = [
   {
     id: "bitemenu",
+    icon: "bitemenu",
     title: "BiteMenu",
-    category: "[Category placeholder]",
-    status: "Featured",
-    problem: "[Problem placeholder — describe the user or business pain.]",
-    solution: "[Solution placeholder — describe what was built.]",
-    outcome: "[Outcome placeholder — describe the result.]",
-    technologies: [
-      "[Technology 1]",
-      "[Technology 2]",
-      "[Technology 3]",
+    tagline: "Voice-first ordering for restaurants and hospitality teams.",
+    overview:
+      "BiteMenu is a restaurant ordering product that lets guests place orders by voice or through a live menu. It combines conversational ordering with a standard menu flow so staff spend less time on repetitive order-taking.",
+    contribution:
+      "Owned core product flows end to end, from ordering logic and menu presentation through deployment-ready UI built for real service environments.",
+    features: [
+      "Voice and manual ordering paths",
+      "Live menu browsing",
+      "Order flow for front-of-house use",
+      "Responsive product interface",
+      "Production-oriented frontend structure",
+      "Deployment-ready product UI",
+    ],
+    technicalHighlights: [
+      "Python",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Web Speech API (Speech-to-Text & Text-to-Speech)",
+      "Voice Recognition",
+      "Component Architecture",
+      "State Management",
+      "Responsive Design",
     ],
     image: bitemenuImage,
     github: "#",
     liveDemo: "#",
     previewUrl: "bitemenu.app",
-    previewAspectRatio: null,
     useIllustration: false,
   },
   {
     id: "brokershub",
+    icon: "brokershub",
     title: "BrokersHub",
-    category: "[Category placeholder]",
-    status: "Personal Project",
-    problem: "[Problem placeholder — describe the user or business pain.]",
-    solution: "[Solution placeholder — describe what was built.]",
-    outcome: "[Outcome placeholder — describe the result.]",
-    technologies: [
-      "[Technology 1]",
-      "[Technology 2]",
-      "[Technology 3]",
+    tagline:
+      "AI-assisted marketplace for connecting clients with trusted service providers.",
+    overview:
+      "BrokersHub is a full-stack marketplace for discovering, comparing, and connecting with service providers through a streamlined booking workflow. It combines recommendations, order management, and role-specific dashboards in one product surface.",
+    contribution:
+      "Led project architecture and implemented core backend and frontend features, with emphasis on scalable workflows, usability, and database design.",
+    features: [
+      "AI-powered provider recommendations",
+      "Smart search with category and city filters",
+      "End-to-end booking workflow",
+      "Role-based dashboards",
+      "Reviews and ratings",
     ],
-    image: brokershubLandingImage,
+    technicalHighlights: [
+      "Python",
+      "Django",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "SQLite",
+      "Authentication",
+      "CRUD Operations",
+      "REST APIs",
+      "AI Recommendations",
+      "Responsive Design",
+    ],
+    image: brokershubPreviewImage,
     github: "#",
     liveDemo: "#",
     previewUrl: "brokershub.app",
-    previewAspectRatio: null,
     useIllustration: false,
   },
   {
-    id: "streamlit-chat",
-    title: "Streamlit Chat",
-    category: "[Category placeholder]",
-    status: "AI Product",
-    problem: "[Problem placeholder — describe the user or business pain.]",
-    solution: "[Solution placeholder — describe what was built.]",
-    outcome: "[Outcome placeholder — describe the result.]",
-    technologies: [
-      "[Technology 1]",
-      "[Technology 2]",
-      "[Technology 3]",
+    id: "smart-study-mock-chat",
+    icon: "streamlit",
+    title: "Smart Study - Mock Chat",
+    tagline: "Lightweight Streamlit chat prototype for study workflows.",
+    overview:
+      "Smart Study - Mock Chat is a small Streamlit prototype for multi-turn chat-style study sessions. It focuses on a simple conversation layout and session-based state rather than full product complexity.",
+    contribution:
+      "Built the Streamlit interface, chat flow, and session state handling as a focused mock for rapid study and iteration.",
+    features: [
+      "Sidebar navigation",
+      "Multi-turn chat history",
+      "Session-based conversation state",
+      "Streamlit-native input controls",
+    ],
+    technicalHighlights: [
+      "Python",
+      "Streamlit",
+      "Session State",
+      "Chat Interface",
     ],
     image: null,
     github: "#",
     liveDemo: null,
     previewUrl: "localhost:8501",
-    previewAspectRatio: null,
     useIllustration: true,
   },
 ];

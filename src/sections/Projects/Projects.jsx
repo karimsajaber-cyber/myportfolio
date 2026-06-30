@@ -1,7 +1,8 @@
 import Container from "../../components/layout/Container";
 import Section from "../../components/layout/Section";
+import SectionHeader from "../../components/layout/SectionHeader";
 import { projects, projectsSection } from "../../content/projects";
-import ProjectCard from "./ProjectCard";
+import CaseStudyRow from "./CaseStudyRow";
 import styles from "./Projects.module.css";
 
 export default function Projects() {
@@ -12,21 +13,24 @@ export default function Projects() {
       ariaLabelledby="projects-heading"
     >
       <Container>
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>{projectsSection.eyebrow}</p>
-          <h2 id="projects-heading" className={styles.title}>
-            {projectsSection.title}
-          </h2>
-          <p className={styles.intro}>{projectsSection.intro}</p>
-        </header>
+        <SectionHeader
+          eyebrow={projectsSection.eyebrow}
+          title={projectsSection.title}
+          intro={projectsSection.intro}
+          titleId="projects-heading"
+          spacing="none"
+          className={styles.header}
+        />
 
-        <ul className={styles.list}>
+        <div className={styles.list}>
           {projects.map((project, index) => (
-            <li key={project.id} className={styles.listItem}>
-              <ProjectCard project={project} reversed={index % 2 === 1} />
-            </li>
+            <CaseStudyRow
+              key={project.id}
+              project={project}
+              isLast={index === projects.length - 1}
+            />
           ))}
-        </ul>
+        </div>
       </Container>
     </Section>
   );

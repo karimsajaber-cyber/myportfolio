@@ -93,7 +93,7 @@
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
-  margin-left: 1px;
+  text-align: center;
 }
 
 .cardTitleInner {
