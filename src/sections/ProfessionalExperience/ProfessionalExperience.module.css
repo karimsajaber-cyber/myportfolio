@@ -1,0 +1,39 @@
+.section {
+  background-color: #ffffff;
+  padding: 20px 80px;
+  align-items: center;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1660px;
+  margin-left: 18px;
+  padding: 0 24px;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 20px 40px;
+  }
+
+  .shell {
+    margin-left: 0;
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .shell {
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: var(--space-4) var(--space-3);
+  }
+}

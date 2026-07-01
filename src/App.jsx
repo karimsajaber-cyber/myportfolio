@@ -1,10 +1,10 @@
-import CareerHighlights from "./sections/CareerHighlights";
 import Contact from "./sections/Contact";
 import CTA from "./sections/CTA";
 import CoreCapabilities from "./sections/CoreCapabilities";
 import Education from "./sections/Education";
 import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
+import ProfessionalExperience from "./sections/ProfessionalExperience";
 import Projects from "./sections/Projects";
 import Research from "./sections/Research";
 import styles from "./App.module.css";
@@ -15,7 +15,7 @@ export default function App() {
       <Hero />
       <CoreCapabilities />
       <Projects />
-      <CareerHighlights />
+      <ProfessionalExperience />
       <Education />
       <Research />
       <CTA />

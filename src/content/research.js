@@ -1,21 +1,19 @@
 /**
- * Research & publications — single featured publication for recruiter-facing section.
+ * Research publication — featured peer-reviewed work for recruiter-facing section.
  */
 export const researchSection = {
-  title: "Research & Publications",
+  title: "Research Publication",
   intro:
-    "Scientific research that reflects analytical thinking, structured experimentation, and evidence-based problem solving.",
+    "A peer-reviewed scientific publication demonstrating my research background, analytical thinking, and collaboration in academic work.",
 };
 
 export const featuredPublication = {
   id: "camel-whey-antibacterial",
-  titleLine1: "Antibacterial activity of camel whey in combination",
-  titleLine2: "with various medicinal plant extracts",
+  title: "Antibacterial Effect of Camel Whey Protein with Various Plant Extracts",
+  author: "Co-Author",
   description:
-    "Co-authored a peer-reviewed scientific publication investigating the antibacterial activity of camel whey combined with medicinal plant extracts. The research involved laboratory experimentation, microbiological analysis, data interpretation, and scientific documentation.",
-  publishedYear: "2017",
-  journal: "Journal of Medicinal Plants Studies",
-  role: "Co-Author",
+    "This peer-reviewed study investigated the antibacterial properties of camel whey protein combined with selected plant extracts. Laboratory experiments evaluated their effectiveness against bacterial growth through microbiological analysis and structured scientific documentation. The findings contribute evidence-based insights to biotechnology and natural antimicrobial research.",
+  tags: ["Peer Reviewed", "Scientific Research", "Biotechnology", "Co-Author"],
   readUrl: "#",
   pdfUrl: "#",
 };

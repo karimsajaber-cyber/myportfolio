@@ -6,7 +6,12 @@ import {
   featuredPublication,
   researchSection,
 } from "../../content/research";
-import PublicationDocument from "./PublicationDocument";
+import PublicationJournalVisual from "./PublicationJournalVisual";
+import {
+  DownloadIcon,
+  ExternalLinkIcon,
+  ResearchBrandIcon,
+} from "./ResearchIcons";
 import styles from "./Research.module.css";
 
 export default function Research() {
@@ -24,55 +29,73 @@ export default function Research() {
           intro={researchSection.intro}
           titleId="research-heading"
           spacing="none"
-          className={styles.sectionHeader}
+          className={`${styles.header} ${styles.reveal}`}
         />
 
         <article
-          className={styles.publicationCard}
+          className={`${styles.card} ${styles.revealDelayed}`}
           aria-labelledby={`publication-${publication.id}`}
         >
           <div className={styles.content}>
-            <h3
-              id={`publication-${publication.id}`}
-              className={styles.publicationTitle}
-            >
-              <span className={styles.titleLine1}>{publication.titleLine1}</span>
-              <span className={styles.titleLine2}>{publication.titleLine2}</span>
-            </h3>
+            <header className={styles.brand}>
+              <div className={styles.brandIcon} aria-hidden="true">
+                <ResearchBrandIcon />
+              </div>
+              <div className={styles.brandText}>
+                <p className={styles.eyebrow}>Featured Publication</p>
+                <h3
+                  id={`publication-${publication.id}`}
+                  className={styles.title}
+                >
+                  {publication.title}
+                </h3>
+              </div>
+            </header>
+
+            <div className={styles.authorBlock}>
+              <span className={styles.authorLabel}>Author</span>
+              <span className={styles.authorValue}>{publication.author}</span>
+            </div>
 
             <p className={styles.description}>{publication.description}</p>
 
-            <dl className={styles.meta}>
-              <div className={styles.metaItem}>
-                <dt className={styles.metaLabel}>Published</dt>
-                <dd className={styles.metaValue}>{publication.publishedYear}</dd>
-              </div>
-              <div className={styles.metaItem}>
-                <dt className={styles.metaLabel}>Journal</dt>
-                <dd className={styles.metaValue}>{publication.journal}</dd>
-              </div>
-              <div className={styles.metaItem}>
-                <dt className={styles.metaLabel}>Role</dt>
-                <dd className={styles.metaValue}>{publication.role}</dd>
-              </div>
-            </dl>
+            <ul
+              className={styles.chipList}
+              aria-label="Publication details"
+            >
+              {publication.tags.map((tag) => (
+                <li key={tag}>
+                  <span className={styles.chip}>{tag}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className={styles.actions}>
-              <Button variant="primary" href={publication.readUrl}>
-                Read Publication
+              <Button
+                variant="primary"
+                href={publication.readUrl}
+                className={styles.actionBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Read Publication</span>
+                <ExternalLinkIcon />
               </Button>
-              <Button variant="secondary" href={publication.pdfUrl}>
-                Download PDF
+              <Button
+                variant="secondary"
+                href={publication.pdfUrl}
+                className={styles.actionBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Download PDF</span>
+                <DownloadIcon />
               </Button>
             </div>
           </div>
 
-          <div className={styles.preview}>
-            <PublicationDocument
-              title={`${publication.titleLine1} ${publication.titleLine2}`}
-              journal={publication.journal}
-              year={publication.publishedYear}
-            />
+          <div className={styles.visual}>
+            <PublicationJournalVisual title={publication.title} />
           </div>
         </article>
       </Container>

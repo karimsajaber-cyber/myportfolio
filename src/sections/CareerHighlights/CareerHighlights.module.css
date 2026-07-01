@@ -1,4 +1,4 @@
-.section {
+/* .section {
   background-color: var(--color-surface);
   padding-top: var(--space-6);
 }
@@ -33,4 +33,4 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-6);
   }
-}
+} */
