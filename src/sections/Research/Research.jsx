@@ -6,7 +6,6 @@ import {
   featuredPublication,
   researchSection,
 } from "../../content/research";
-import PublicationJournalVisual from "./PublicationJournalVisual";
 import {
   DownloadIcon,
   ExternalLinkIcon,
@@ -94,10 +93,6 @@ export default function Research() {
                 <DownloadIcon />
               </Button>
             </div>
-          </div>
-
-          <div className={styles.visual}>
-            <PublicationJournalVisual title={publication.title} />
           </div>
         </article>
         </div>
