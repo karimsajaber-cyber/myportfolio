@@ -2,8 +2,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  height: 26px;
-  padding: 0 10px;
+  min-height: 1.625rem;
+  height: auto;
+  max-width: 100%;
+  padding: var(--space-1) var(--space-2);
   font-size: var(--text-xs);
   font-weight: var(--weight-medium);
   line-height: 1;

@@ -19,16 +19,16 @@ export const capabilities = [
       "Python",
       "Django",
       "React",
-      "R.APIs",
+      "REST APIs",
       "MySQL",
       "SQLite",
       "Flask",
-      "C#",
+      "C# OOPs",
       "JS",
-      "Git",
+      "Tailwinds",
       "GitHub",
       "HTML5",
-      "B.strap",
+      "Bootstrap",
       "CSS3",
       "AWS",
     ],
@@ -47,7 +47,9 @@ export const capabilities = [
       "AI-Assisted Development",
       "API Integration",
       " Voice Interfaces ",
-      
+      "AI Tools",
+      "Chat Interfaces"
+
     ],
   },
   {
@@ -77,7 +79,7 @@ export const capabilities = [
       "API Design",
       "Database Design",
       "Software Documentation",
-      "Testing & Quality Assurance",
+      "Testing & QA",
       "Code Review",
       "Responsive Design",
     ],
@@ -103,9 +105,9 @@ export const capabilities = [
       "Improving how teams work — streamlining processes, documentation, and the path from idea to production.",
     items: [
       "Process Improvement",
-      "Documentation",
-      "Git & GitHub",
-      "Delivery Pipelines",
+      "Requirements Analysis",
+      "Release Readiness",
+      "Workflow Coordination",
     ],
   },
 ];

@@ -14,15 +14,7 @@ export default function FeaturedCard() {
 
   return (
     <article className={styles.card} aria-labelledby="featured-experience-title">
-      <img
-        className={styles.illustration}
-        src={illustrationImage}
-        alt=""
-        aria-hidden="true"
-        decoding="async"
-      />
-
-      <div className={styles.content}>
+      <div className={styles.contentHeader}>
         <div className={styles.badge}>
           <StarIcon />
           <span>{data.badge}</span>
@@ -48,7 +40,17 @@ export default function FeaturedCard() {
             </p>
           </div>
         </div>
+      </div>
 
+      <img
+        className={styles.illustration}
+        src={illustrationImage}
+        alt=""
+        aria-hidden="true"
+        decoding="async"
+      />
+
+      <div className={styles.contentBody}>
         <p className={styles.summary}>{data.summary}</p>
 
         <ul className={styles.bullets}>

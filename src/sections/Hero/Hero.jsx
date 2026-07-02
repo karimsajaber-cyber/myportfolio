@@ -97,17 +97,19 @@ export default function Hero() {
           <div className={styles.splitBody}>
             <div className={styles.storyZone}>
               <div className={styles.storyContent}>
-                <p className={styles.eyebrow}>{site.role}</p>
+                <p className={`${styles.eyebrow} ${styles.storyRole}`}>{site.role}</p>
 
-                <h1 id="hero-heading" className={styles.name}>
+                <h1 id="hero-heading" className={`${styles.name} ${styles.storyName}`}>
                   {site.name}
                 </h1>
 
-                <p className={styles.headline}>{hero.headline}</p>
+                <div className={styles.storyBody}>
+                  <p className={styles.headline}>{hero.headline}</p>
 
-                <p className={styles.tagline}>{site.tagline}</p>
+                  <p className={styles.tagline}>{site.tagline}</p>
 
-                <p className={styles.differentiator}>{site.differentiator}</p>
+                  <p className={styles.differentiator}>{site.differentiator}</p>
+                </div>
               </div>
 
               <div className={styles.actions}>

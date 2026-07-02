@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   padding-block: var(--space-4);
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .heroWrap {
@@ -130,6 +131,8 @@
 .navList {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-6);
 }
 
@@ -143,6 +146,7 @@
   align-items: center;
   gap: var(--space-2);
   flex-shrink: 0;
+  min-width: 0;
   font-size: 0.8125rem;
   font-weight: var(--weight-medium);
   color: var(--color-text-muted);
@@ -336,7 +340,20 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-left: 30px;
+  margin-inline-start: 1.875rem;
+  min-width: 0;
+}
+
+.storyBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.storyRole,
+.storyName {
+  min-width: 0;
 }
 
 /* ——— Featured project preview ——— */
@@ -369,14 +386,16 @@
 .previewImage {
   display: block;
   width: 90%;
-  height:350px;
-  padding: 10px;
-  border: 2px solid #ceddfe ;
-  border-radius: 30px;
+  height: 21.875rem;
+  padding: 0.625rem;
+  border: 2px solid #ceddfe;
+  border-radius: 1.875rem;
+  object-fit: cover;
+  object-position: center;
   vertical-align: top;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px), screen and (min-device-width: 1024px) and (max-width: 1023px) {
   .splitBody {
     grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
     align-items: stretch;
@@ -386,6 +405,7 @@
     padding: var(--space-6) var(--space-6) var(--space-6) var(--space-7);
     justify-content: center;
     gap: var(--space-5);
+    min-width: 0;
   }
 
   .previewZone {
@@ -394,6 +414,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-width: 0;
   }
 }
 
@@ -506,13 +527,90 @@
     padding-block: var(--space-3);
   }
 
-  .storyZone {
+  .splitBody {
     padding: var(--space-4);
     gap: var(--space-4);
   }
 
-  .storyContent {
+  .storyBody {
     gap: var(--space-3);
+  }
+}
+
+/* Mobile hero layout */
+@media (max-width: 767px) {
+  .splitBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "preview"
+      "role"
+      "name"
+      "body"
+      "actions";
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .storyZone {
+    display: contents;
+  }
+
+  .storyContent {
+    display: contents;
+  }
+
+  .storyRole {
+    grid-area: role;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .storyName {
+    grid-area: name;
+    margin-left: 0;
+  }
+
+  .storyBody {
+    grid-area: body;
+    margin-left: 0;
+  }
+
+  .storyZone > .actions {
+    grid-area: actions;
+  }
+
+  .previewZone {
+    grid-area: preview;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .previewFrame {
+    width: 100%;
+    max-width: min(100%, 20rem);
+    margin-inline: auto;
+  }
+
+  .previewVisual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .previewImage {
+    width: 100%;
+    height: auto;
+    max-height: 14rem;
+    object-fit: contain;
+    object-position: center center;
+    margin-inline: auto;
+    padding: 8px;
   }
 }
 

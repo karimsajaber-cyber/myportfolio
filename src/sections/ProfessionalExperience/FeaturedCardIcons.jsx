@@ -260,32 +260,33 @@ const skillIcons = {
   ),
   "Supply Chain": (
     <svg viewBox="0 0 16 16" aria-hidden="true">
-      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
-      <rect x="2.6" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
-      <rect x="6.4" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
-      <rect x="10.2" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
-      <path d="M4.2 5.4V4.2M8 5.4V4.2M11.8 5.4V4.2M4.2 4.2h7.6" stroke="var(--color-primary)" strokeWidth="0.7" strokeLinecap="round" />
-      <path d="M2.8 10.4h10.4" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinecap="round" opacity="0.5" />
+      <rect width="16" height="16" rx="3" fill="#0F766E" />
+      <rect x="2.4" y="6" width="3.4" height="2.8" rx="0.5" fill="#fff" opacity="0.95" />
+      <rect x="6.3" y="6" width="3.4" height="2.8" rx="0.5" fill="#CCFBF1" />
+      <rect x="10.2" y="6" width="3.4" height="2.8" rx="0.5" fill="#fff" opacity="0.95" />
+      <path d="M4.1 5.2V4M8 5.2V4M11.9 5.2V4M4.1 4h7.8" stroke="#99F6E4" strokeWidth="0.75" strokeLinecap="round" />
+      <path d="M2.4 10.2h11.2" stroke="#5EEAD4" strokeWidth="0.7" strokeLinecap="round" />
     </svg>
   ),
   Procurement: (
     <svg viewBox="0 0 16 16" aria-hidden="true">
-      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
-      <path d="M4.2 4.8h7.6l-.8 7.2H5L4.2 4.8Z" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinejoin="round" />
-      <path d="M6.2 3.6h3.6l.5 1.2H5.7l.5-1.2Z" fill="var(--color-primary)" />
-      <path d="M6.6 7.4h2.8" stroke="var(--color-primary)" strokeWidth="0.75" strokeLinecap="round" />
+      <rect width="16" height="16" rx="3" fill="#EA580C" />
+      <path d="M4.2 4.8h7.6l-.8 7.2H5L4.2 4.8Z" fill="#fff" />
+      <path d="M6.2 3.6h3.6l.5 1.2H5.7l.5-1.2Z" fill="#FDBA74" />
+      <path d="M6.6 7.4h2.8" stroke="#EA580C" strokeWidth="0.75" strokeLinecap="round" />
     </svg>
   ),
   Operations: (
     <svg viewBox="0 0 16 16" aria-hidden="true">
-      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
-      <circle cx="8" cy="8" r="2.2" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.7" />
+      <rect width="16" height="16" rx="3" fill="#4F46E5" />
+      <circle cx="8" cy="8" r="2.4" fill="#fff" />
       <path
-        d="M8 3.2v1.4M8 11.4v1.4M3.2 8h1.4M11.4 8h1.4M4.7 4.7l1 1M10.3 10.3l1 1M4.7 11.3l1-1M10.3 5.7l1-1"
-        stroke="var(--color-primary)"
-        strokeWidth="0.75"
+        d="M8 3v1.6M8 11.4v1.6M3 8h1.6M11.4 8h1.6M4.9 4.9l1.1 1.1M10 10l1.1 1.1M4.9 11.1l1.1-1.1M10 6l1.1-1.1"
+        stroke="#C7D2FE"
+        strokeWidth="0.85"
         strokeLinecap="round"
       />
+      <circle cx="8" cy="8" r="0.9" fill="#4F46E5" />
     </svg>
   ),
   "Customer Support": (
@@ -301,6 +302,16 @@ const skillIcons = {
       <circle cx="6" cy="6.4" r="1.5" fill="#fff" />
       <circle cx="10.4" cy="6.4" r="1.5" fill="#DBEAFE" />
       <path d="M3.8 11.2c.6-1.4 1.8-2.2 2.2-2.2s1.6.8 2.2 2.2M9.8 11.2c.6-1.4 1.4-2.2 1.8-2.2s1.2.8 1.8 2.2" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+    </svg>
+  ),
+  "CRM Systems": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#1D4ED8" />
+      <ellipse cx="8" cy="5.2" rx="3.6" ry="1.2" fill="#DBEAFE" />
+      <path d="M4.4 5.2v3.2c0 .7 1.6 1.2 3.6 1.2s3.6-.5 3.6-1.2V5.2" fill="#fff" />
+      <circle cx="5.8" cy="10.2" r="1.2" fill="#fff" />
+      <circle cx="10.2" cy="10.2" r="1.2" fill="#BFDBFE" />
+      <path d="M6.4 11.4h3.2" stroke="#93C5FD" strokeWidth="0.65" strokeLinecap="round" />
     </svg>
   ),
   Communication: (
@@ -332,6 +343,16 @@ const skillIcons = {
       <rect width="16" height="16" rx="3" fill="#16A34A" />
       <path d="M3.6 11.2 6.4 8l2 1.8 3.6-4.2" stroke="#fff" strokeWidth="0.9" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M10.8 5.6H12v1.8" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  "Sales Associate": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#15803D" />
+      <circle cx="7" cy="5.8" r="1.5" fill="#fff" />
+      <path d="M4.2 11c.7-1.6 1.8-2.4 2.8-2.4s2.1.8 2.8 2.4" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+      <path d="M10.8 7.2h2.4l-.4 4.8H9.2l-.4-4.8Z" fill="#BBF7D0" />
+      <path d="M11 6.8v.4" stroke="#BBF7D0" strokeWidth="0.65" strokeLinecap="round" />
+      <path d="M10.4 9.6h2.4" stroke="#15803D" strokeWidth="0.55" strokeLinecap="round" />
     </svg>
   ),
   Biotechnology: (
@@ -713,17 +734,122 @@ const skillIcons = {
       <path d="M7.4 9.4 9.2 8.4 11 9.4" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" strokeLinejoin="round" />
     </SoftIcon>
   ),
+  "Tailwind CSS": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#06B6D4" />
+      <path
+        d="M8 4.6c-1.5 0-2.4.9-2.9 2.2 1.1-.6 2-.3 2.6.3l.5.7c.5-.8 1.4-1.4 2.7-1.4 1.5 0 2.4.9 2.9 2.2-1.1-.6-2-.3-2.6.3-.2-.4-.7-.6-1.5-.6Zm-2.8 4.6c-1.5 0-2.4.9-2.9 2.2 1.1-.6 2-.3 2.6.3l.5.7c.5-.8 1.4-1.4 2.7-1.4 1.3 0 2.2.6 2.7 1.6-1-.5-1.8-.2-2.4.4l-.6.7Z"
+        fill="#fff"
+      />
+    </svg>
+  ),
+  "Amazon APIs": (
+    <SoftIcon fill="#232F3E">
+      <path d="M4.2 11c2.2 1.1 4.8 1.1 7.6 0" stroke="#FF9900" strokeWidth="0.9" fill="none" strokeLinecap="round" />
+      <path d="M8 4.4 10 8H9.1l-.2-.5H7.1L6.9 8H5.8L8 4.4Z" fill="#FF9900" />
+      <rect x="10.8" y="5.2" width="1.2" height="4.8" rx="0.2" fill="#fff" opacity="0.9" />
+    </SoftIcon>
+  ),
+  "LLM Workflows": (
+    <SoftIcon fill="#4F46E5">
+      <circle cx="4.8" cy="5.8" r="1" fill="#C7D2FE" />
+      <circle cx="8" cy="4.6" r="1" fill="#E0E7FF" />
+      <circle cx="11.2" cy="5.8" r="1" fill="#C7D2FE" />
+      <circle cx="8" cy="8.8" r="1" fill="#fff" />
+      <path d="M5.4 6.2 7.2 8.2M9.6 5.4 8.2 8.2M10.6 6.2 8.8 8.2" stroke="#fff" strokeWidth="0.5" />
+      <path d="M10.2 10.2h2.2l-.7 1.2-.8-1.2Z" fill="#C7D2FE" />
+    </SoftIcon>
+  ),
+  "AI Tools": (
+    <SoftIcon fill="#7C3AED">
+      <path d="M5.2 4.2h5.6l-.4 7.4H5.6l-.4-7.4Z" fill="#fff" />
+      <path d="M6.6 7.8h2.8M8 6.4v2.8" stroke="#7C3AED" strokeWidth="0.7" strokeLinecap="round" />
+      <circle cx="11.6" cy="4.6" r="0.8" fill="#DDD6FE" />
+      <path d="M11.2 4v1.2M12.4 4.6h-1.2" stroke="#fff" strokeWidth="0.5" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Customer Success": (
+    <SoftIcon fill="#16A34A">
+      <path d="M3.8 11 6.2 8.6l1.8 1.4 3.6-4" stroke="#fff" strokeWidth="0.85" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="5.2" cy="5.4" r="1.2" fill="#fff" opacity="0.95" />
+      <path d="M8.8 5.4h4.4" stroke="#BBF7D0" strokeWidth="0.65" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Requirements Analysis": (
+    <SoftIcon>
+      <rect x="4" y="3.6" width="8" height="9.2" rx="0.8" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <path d="M5.6 6.4h4.8M5.6 8h4.8M5.6 9.6h2.8" stroke="var(--color-primary)" strokeWidth="0.55" strokeLinecap="round" />
+      <circle cx="11.6" cy="10" r="1.8" fill="var(--color-primary-soft)" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M11.1 10.1l.4.4.9-.9" stroke="var(--color-primary)" strokeWidth="0.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </SoftIcon>
+  ),
+  "Release Readiness": (
+    <SoftIcon fill="#2563EB">
+      <path d="M8 3.2 9.6 7.2H12l-2.4 1.8.9 2.8L8 10.4 5.5 11.8l.9-2.8L4 7.2h2.4L8 3.2Z" fill="#fff" />
+      <path d="M6 12.8h4" stroke="#93C5FD" strokeWidth="0.7" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Workflow Coordination": (
+    <SoftIcon>
+      <rect x="3.2" y="4.4" width="3.6" height="2.8" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <rect x="9.2" y="4.4" width="3.6" height="2.8" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <rect x="6.2" y="8.8" width="3.6" height="2.8" rx="0.5" fill="var(--color-primary)" opacity="0.2" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M5 7.2 6.8 8.8M11 7.2 9.2 8.8" stroke="var(--color-primary)" strokeWidth="0.55" />
+    </SoftIcon>
+  ),
+  Teaching: (
+    <SoftIcon fill="#1D4ED8">
+      <path d="M3.6 5.2 8 3.6l4.4 1.6v4.4c0 1.4-2 2.4-4.4 2.4S3.6 11 3.6 9.6V5.2Z" fill="#fff" />
+      <path d="M8 8.4v2.4" stroke="#fff" strokeWidth="0.75" strokeLinecap="round" />
+      <path d="M6.4 12h3.2" stroke="#93C5FD" strokeWidth="0.7" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  Leadership: (
+    <SoftIcon fill="#F59E0B">
+      <circle cx="8" cy="5.6" r="1.5" fill="#fff" />
+      <path d="M4.8 11.2c.8-1.8 2-2.6 3.2-2.6s2.4.8 3.2 2.6" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+      <path d="M11.6 4.4 12.8 6l-2 .2.6 1.8-.9-1.3-1.7.2.9-1.3Z" fill="#FDE68A" />
+    </SoftIcon>
+  ),
+  "Web Speech API": (
+    <SoftIcon>
+      <rect x="3.2" y="4.8" width="3.2" height="5.2" rx="1.6" fill="var(--color-primary)" />
+      <path d="M4.8 11.2c0 .8.6 1.4 1.4 1.4" stroke="var(--color-primary)" strokeWidth="0.6" fill="none" />
+      <path d="M9.6 6.8 11.2 5.6v4.8L9.6 9.2V6.8Z" fill="var(--color-primary)" />
+      <path d="M12 7.2c.4.6.6 1.2.6 1.8s-.2 1.2-.6 1.8" stroke="var(--color-primary)" strokeWidth="0.6" fill="none" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "TTS Speech API": (
+    <SoftIcon fill="#7C3AED">
+      <path d="M4.2 6.8 6.8 5.2v5.6L4.2 9.2V6.8Z" fill="#fff" />
+      <path d="M10.2 6.4c.8.8 1.2 1.7 1.2 2.6s-.4 1.8-1.2 2.6" stroke="#fff" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+      <path d="M11.4 5c1.2 1.2 1.8 2.5 1.8 4s-.6 2.8-1.8 4" stroke="#fff" strokeWidth="0.7" fill="none" strokeLinecap="round" opacity="0.65" />
+    </SoftIcon>
+  ),
 };
 
 const skillIconAliases = {
   Supply: "Supply Chain",
+  "CRM systems": "CRM Systems",
   "C#OOPS": "C# OOPs",
   "Software Documentation": "Documentation",
   "Technical Documentation": "Documentation",
+  JS: "JavaScript",
+  Tailwinds: "Tailwind CSS",
+  "Web Speech": "Web Speech API",
+  "Chat Interfaces": "Chat Interface",
+  "Voice Interfaces": "Voice Recognition",
+  "Functional Collaboration": "Cross-functional Collaboration",
+  "Testing & QA": "Testing & Quality Assurance",
 };
 
+function normalizeSkillLabel(label) {
+  return String(label ?? "").trim().replace(/\s+/g, " ");
+}
+
 export function SkillChipIcon({ label }) {
-  const iconKey = skillIconAliases[label] ?? label;
+  const normalized = normalizeSkillLabel(label);
+  const iconKey = skillIconAliases[normalized] ?? normalized;
   return skillIcons[iconKey] ?? <ChipGlyph>•</ChipGlyph>;
 }
 

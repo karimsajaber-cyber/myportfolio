@@ -1,8 +1,8 @@
 :root {
   --container-max: 72rem; /* 1152px */
 
-  --section-padding-y: var(--space-6);
-  --section-padding-y-mobile: var(--space-5);
+  --section-padding-y: var(--space-5);
+  --section-padding-y-mobile: var(--space-4);
 
   --header-height: 4.5rem;
 
@@ -17,4 +17,10 @@
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
+
+  /*
+   * Zoom-stable desktop tier (use in section CSS modules):
+   * Desktop: (min-width: 1024px), screen and (min-device-width: 1024px) and (max-width: 1023px)
+   * Tablet/mobile: standard max-width breakpoints; desktop zoom overrides go last in each file.
+   */
 }

@@ -227,16 +227,6 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .panel {
-    padding: var(--space-5);
-  }
-
-  .list {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 767px) {
   .backdrop {
     padding: var(--space-6) var(--space-4) var(--space-5);
@@ -246,6 +236,20 @@
     width: min(92vw, 68.75rem);
     padding: var(--space-5) var(--space-4);
     border-radius: var(--radius-lg);
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
+  .panel {
+    padding: var(--space-5);
+  }
+
+  .list {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -26,7 +26,7 @@ const experienceCards = [
             "Logistics"
         ],
         skills: [
-            "Supply",
+            "Supply Chain",
             "Procurement",
             "Operations"
         ]
@@ -45,7 +45,7 @@ const experienceCards = [
 
         skills: [
             "Customer Support",
-            "CRM",
+            "CRM Systems",
             "Problem Solving"
         ],
 
@@ -61,7 +61,7 @@ const experienceCards = [
             "Customer Support",
             "Communication",
             "Documentation",
-            "CRM",
+            "CRM Systems",
             "Issue Resolution"
         ]
     },
@@ -79,7 +79,7 @@ const experienceCards = [
 
         skills: [
             "English Training",
-            "Sales",
+            "Sales Associate",
             "Client Relations"
         ],
 

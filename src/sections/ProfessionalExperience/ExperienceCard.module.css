@@ -1,41 +1,41 @@
 .card {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 22px;
-  transform-origin: center center;
-  transition: var(--card-zoom-transition);
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 22px;
+    transform-origin: center center;
+    transition: var(--card-zoom-transition);
 }
 
 .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background-image: url("../../assets/featured-card-bg.png");
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-  z-index: 0;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url("../../assets/featured-card-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.card > * {
-  position: relative;
-  z-index: 1;
+.card>* {
+    position: relative;
+    z-index: 1;
 }
 
 .card:hover {
-  transform: scale(var(--card-zoom-hover));
-  border-color: #c7d2fe;
-  box-shadow: var(--card-zoom-shadow-hover);
+    transform: scale(var(--card-zoom-hover));
+    border-color: #c7d2fe;
+    box-shadow: var(--card-zoom-shadow-hover);
 }
 
 .icon {
@@ -57,6 +57,7 @@
 
 .header {
     margin-bottom: 12px;
+    margin-top: -18px;
 }
 
 .title {
@@ -64,12 +65,16 @@
     font-size: 1rem;
     font-weight: 700;
     color: #0f172a;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .company {
     margin-top: 4px;
     color: #64748b;
     font-size: 0.95rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .description {
@@ -84,37 +89,37 @@
 }
 
 .skills {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
-  column-gap: 6px;
-  row-gap: 4px;
-  margin-top: 12px;
-  flex: 1;
-  min-width: 0;
-  width: 100%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 2px;
+    margin-top: 12px;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
 }
 
-.skills > :nth-child(3) {
-  grid-column: 1 / -1;
-  justify-self: center;
+.skills> :nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
 }
 
 .skillChip {
-  height: 24px;
-  padding: 0 7px;
-  gap: 4px;
-  font-size: 0.6875rem;
+    height: 24px;
+    max-width: 100%;
+    padding: 0 7px;
+    gap: 4px;
+    font-size: 0.6875rem;
 }
 
-.skillChip > span:first-child {
-  width: 0.75rem;
-  height: 0.75rem;
+.skillChip>span:first-child {
+    width: 0.75rem;
+    height: 0.75rem;
 }
 
 .skillChip svg {
-  width: 0.75rem;
-  height: 0.75rem;
+    width: 0.75rem;
+    height: 0.75rem;
 }
 
 .footer {
@@ -150,22 +155,59 @@
 }
 
 .card:hover .icon {
-  border-color: #bfdbfe;
-  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.12);
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.12);
 }
 
 .cardExpanded {
-  border-color: #bfdbfe;
-  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
+    border-color: #bfdbfe;
+    box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
+}
+
+@media (max-width: 767px) {
+  .card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .title,
+  .company {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
+  .card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .title,
+  .company {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@media (max-width: 430px) {
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .skills> :nth-child(3) {
+        grid-column: auto;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card,
-  .icon {
-    transition: none;
-  }
 
-  .card:hover {
-    transform: none;
-  }
+    .card,
+    .icon {
+        transition: none;
+    }
+
+    .card:hover {
+        transform: none;
+    }
 }

@@ -1,7 +1,7 @@
 .section {
   background-color: transparent;
-  padding-block: var(--space-6);
-  padding-inline: 80px;
+  padding-block: var(--section-padding-y);
+  padding-inline: clamp(var(--space-4), 5vw, var(--space-9));
   align-items: center;
 }
 
@@ -53,8 +53,8 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1.4fr);
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
   margin-top: 48px;
   align-items: stretch;
 }
@@ -95,29 +95,18 @@
   color: #64748b;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .cardsGrid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 1023px) {
-  .section {
-    padding: 20px 40px;
+    gap: var(--space-4);
   }
 
-  .shell {
-    margin-left: 0;
-    padding: 0 var(--space-4);
-  }
-}
-
-@media (max-width: 767px) {
   .section {
     padding: var(--space-5) var(--space-4);
   }
 
   .shell {
+    margin-left: 0;
     padding: 0;
   }
 }
@@ -125,5 +114,21 @@
 @media (max-width: 640px) {
   .section {
     padding: var(--space-4) var(--space-3);
+  }
+}
+
+@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .section {
+    padding: 20px 40px;
+  }
+
+  .shell {
+    margin-left: 0;
+    padding: 0 var(--space-4);
   }
 }
