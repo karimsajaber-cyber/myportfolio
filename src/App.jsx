@@ -7,6 +7,7 @@ import Hero from "./sections/Hero";
 import ProfessionalExperience from "./sections/ProfessionalExperience";
 import Projects from "./sections/Projects";
 import Research from "./sections/Research";
+import AskBot from "./components/AskBot/AskBot";
 import styles from "./App.module.css";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       <CTA />
       <Contact />
       <Footer />
+      <AskBot />
     </main>
   );
 }

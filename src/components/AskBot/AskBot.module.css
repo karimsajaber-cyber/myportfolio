@@ -416,6 +416,209 @@
   outline-offset: 2px;
 }
 
+.recommendationTriggerWrap {
+  margin-top: var(--space-3);
+}
+
+.recommendationTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #9eb5e8;
+  border-radius: var(--radius-md);
+  background-color: rgba(26, 61, 158, 0.08);
+  color: #153278;
+  font-family: inherit;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.recommendationTrigger:hover {
+  background-color: rgba(26, 61, 158, 0.14);
+  border-color: #7f9fd8;
+}
+
+.recommendationTrigger:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.recommendationSection {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid #d5e0f2;
+}
+
+.recommendationForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.recommendationHelper {
+  margin: 0;
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: #5a6b88;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.formLabel {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  color: #3d4f6f;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #b8c9e8;
+  border-radius: var(--radius-md);
+  background-color: #f8faff;
+  color: #0c1a3a;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.formInput {
+  height: 2.25rem;
+}
+
+.formTextarea {
+  min-height: 5.5rem;
+  max-height: 8rem;
+  resize: vertical;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #5a6b88;
+}
+
+.formInput:disabled,
+.formTextarea:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.formValidation,
+.formError {
+  margin: 0;
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+}
+
+.formValidation {
+  color: #7a3e12;
+}
+
+.formError {
+  color: #9b1c1c;
+}
+
+.formSubmit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.25rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #153278;
+  border-radius: var(--radius-md);
+  background-color: #1a3d9e;
+  color: #f8faff;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.formSubmit:hover:not(:disabled) {
+  background-color: #153278;
+}
+
+.formSubmit:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.formSubmit:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.recommendationFormActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.recommendationSuccess {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid #b8c9e8;
+  border-radius: var(--radius-md);
+  background-color: #f8faff;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: #0c1a3a;
+}
+
+.writeAnotherButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.75rem;
+  padding: 0.2rem var(--space-3);
+  border: 1px solid #9eb5e8;
+  border-radius: 999px;
+  background-color: rgba(26, 61, 158, 0.1);
+  color: #153278;
+  font-family: inherit;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.writeAnotherButton:hover {
+  background-color: rgba(26, 61, 158, 0.16);
+  border-color: #7f9fd8;
+}
+
+.writeAnotherButton:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
 .composer {
   display: flex;
   flex-direction: column;

@@ -5,6 +5,8 @@ import {
   findBotResponse,
   greetingMessage,
   quickQuestions,
+  recommendationFormEndpoint,
+  recommendationFormSource,
 } from "../../content/askBot";
 import styles from "./AskBot.module.css";
 
@@ -156,33 +158,220 @@ function MessageActions({
   );
 }
 
+function RecommendationForm({
+  onBack,
+  onSubmitSuccess,
+  formId,
+}) {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [recommendation, setRecommendation] = useState("");
+  const [validationError, setValidationError] = useState("");
+  const [submitError, setSubmitError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const trimmedName = name.trim();
+    const trimmedRecommendation = recommendation.trim();
+
+    if (!trimmedName || !trimmedRecommendation) {
+      setValidationError("Please enter your name and recommendation.");
+      setSubmitError(false);
+      return;
+    }
+
+    setValidationError("");
+    setSubmitError(false);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(recommendationFormEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          role: role.trim(),
+          recommendation: trimmedRecommendation,
+          source: recommendationFormSource,
+        }),
+      });
+
+      if (response.ok) {
+        onSubmitSuccess();
+        return;
+      }
+
+      setSubmitError(true);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  return (
+    <form
+      id={formId}
+      className={styles.recommendationForm}
+      onSubmit={handleSubmit}
+      noValidate
+    >
+      <p className={styles.recommendationHelper}>
+        Your recommendation will be sent directly to Karim.
+      </p>
+
+      <div className={styles.formField}>
+        <label className={styles.formLabel} htmlFor={`${formId}-name`}>
+          Name
+        </label>
+        <input
+          id={`${formId}-name`}
+          type="text"
+          className={styles.formInput}
+          placeholder="Your name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          disabled={isSubmitting}
+          aria-required="true"
+        />
+      </div>
+
+      <div className={styles.formField}>
+        <label className={styles.formLabel} htmlFor={`${formId}-role`}>
+          Role / Company
+        </label>
+        <input
+          id={`${formId}-role`}
+          type="text"
+          className={styles.formInput}
+          placeholder="Your role or company"
+          value={role}
+          onChange={(event) => setRole(event.target.value)}
+          disabled={isSubmitting}
+        />
+      </div>
+
+      <div className={styles.formField}>
+        <label
+          className={styles.formLabel}
+          htmlFor={`${formId}-recommendation`}
+        >
+          Recommendation
+        </label>
+        <textarea
+          id={`${formId}-recommendation`}
+          className={styles.formTextarea}
+          placeholder="Write a short recommendation..."
+          value={recommendation}
+          onChange={(event) => setRecommendation(event.target.value)}
+          disabled={isSubmitting}
+          rows={4}
+          aria-required="true"
+        />
+      </div>
+
+      {validationError ? (
+        <p className={styles.formValidation} role="alert">
+          {validationError}
+        </p>
+      ) : null}
+
+      {submitError ? (
+        <p className={styles.formError} role="alert">
+          Something went wrong. Please try again.
+        </p>
+      ) : null}
+
+      <button
+        type="submit"
+        className={styles.formSubmit}
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Send recommendation"}
+      </button>
+
+      <div className={styles.recommendationFormActions}>
+        <button
+          type="button"
+          className={styles.backToQuestions}
+          onClick={onBack}
+          disabled={isSubmitting}
+        >
+          Back to questions
+        </button>
+      </div>
+    </form>
+  );
+}
+
 export default function AskBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [phonePopupMessageId, setPhonePopupMessageId] = useState(null);
+  const [isRecommendationOpen, setIsRecommendationOpen] = useState(false);
+  const [recommendationSuccess, setRecommendationSuccess] = useState(false);
+  const [recommendationFormKey, setRecommendationFormKey] = useState(0);
   const rootRef = useRef(null);
   const bodyRef = useRef(null);
   const latestAssistantRef = useRef(null);
   const messageIdRef = useRef(0);
   const quickQuestionsId = useId();
+  const recommendationFormId = useId();
 
   const trimmedInput = inputValue.trim();
   const canSend = trimmedInput.length > 0;
   const hasConversationStarted = messages.length > 0;
+  const showInitialActions =
+    !hasConversationStarted && !isRecommendationOpen;
   const lastAssistantMessageId = [...messages]
     .reverse()
     .find((message) => message.role === "assistant")?.id;
+
+  function resetRecommendation() {
+    setIsRecommendationOpen(false);
+    setRecommendationSuccess(false);
+    setRecommendationFormKey((current) => current + 1);
+  }
 
   function resetChat() {
     setMessages([]);
     setInputValue("");
     setPhonePopupMessageId(null);
+    resetRecommendation();
     messageIdRef.current = 0;
 
     if (bodyRef.current) {
       bodyRef.current.scrollTop = 0;
     }
+  }
+
+  function openRecommendationForm() {
+    setIsRecommendationOpen(true);
+    setRecommendationSuccess(false);
+    setPhonePopupMessageId(null);
+
+    if (bodyRef.current) {
+      bodyRef.current.scrollTop = 0;
+    }
+  }
+
+  function handleRecommendationSuccess() {
+    setRecommendationSuccess(true);
+
+    if (bodyRef.current) {
+      bodyRef.current.scrollTop = 0;
+    }
+  }
+
+  function handleWriteAnother() {
+    setRecommendationSuccess(false);
+    setRecommendationFormKey((current) => current + 1);
   }
 
   function closePanel() {
@@ -358,29 +547,81 @@ export default function AskBot() {
               ))}
             </div>
 
-            {!hasConversationStarted ? (
-              <div
-                className={styles.quickQuestions}
-                role="group"
-                aria-labelledby={quickQuestionsId}
-              >
-                <p id={quickQuestionsId} className={styles.quickQuestionsLabel}>
-                  Quick questions
-                </p>
-                <div className={styles.quickQuestionsList}>
-                  {quickQuestions.map((question) => (
-                    <button
-                      key={question}
-                      type="button"
-                      className={styles.quickQuestion}
-                      onClick={() => handleQuickQuestion(question)}
-                    >
-                      {question}
-                    </button>
-                  ))}
+            {showInitialActions ? (
+              <>
+                <div
+                  className={styles.quickQuestions}
+                  role="group"
+                  aria-labelledby={quickQuestionsId}
+                >
+                  <p
+                    id={quickQuestionsId}
+                    className={styles.quickQuestionsLabel}
+                  >
+                    Quick questions
+                  </p>
+                  <div className={styles.quickQuestionsList}>
+                    {quickQuestions.map((question) => (
+                      <button
+                        key={question}
+                        type="button"
+                        className={styles.quickQuestion}
+                        onClick={() => handleQuickQuestion(question)}
+                      >
+                        {question}
+                      </button>
+                    ))}
+                  </div>
                 </div>
+
+                <div className={styles.recommendationTriggerWrap}>
+                  <button
+                    type="button"
+                    className={styles.recommendationTrigger}
+                    onClick={openRecommendationForm}
+                  >
+                    Write a recommendation
+                  </button>
+                </div>
+              </>
+            ) : null}
+
+            {isRecommendationOpen ? (
+              <div className={styles.recommendationSection}>
+                {recommendationSuccess ? (
+                  <>
+                    <p className={styles.recommendationSuccess} role="status">
+                      Thank you — your recommendation was sent to Karim.
+                    </p>
+                    <div className={styles.recommendationFormActions}>
+                      <button
+                        type="button"
+                        className={styles.backToQuestions}
+                        onClick={resetChat}
+                      >
+                        Back to questions
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.writeAnotherButton}
+                        onClick={handleWriteAnother}
+                      >
+                        Write another
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <RecommendationForm
+                    key={recommendationFormKey}
+                    formId={recommendationFormId}
+                    onBack={resetChat}
+                    onSubmitSuccess={handleRecommendationSuccess}
+                  />
+                )}
               </div>
-            ) : (
+            ) : null}
+
+            {hasConversationStarted ? (
               <div className={styles.backToQuestionsWrap}>
                 <button
                   type="button"
@@ -390,9 +631,10 @@ export default function AskBot() {
                   Back to questions
                 </button>
               </div>
-            )}
+            ) : null}
           </div>
 
+          {!isRecommendationOpen ? (
           <form className={styles.composer} onSubmit={handleSubmit}>
             <label className={styles.inputLabel} htmlFor="askbot-input">
               Message
@@ -417,6 +659,7 @@ export default function AskBot() {
               </button>
             </div>
           </form>
+          ) : null}
         </div>
       ) : null}
 

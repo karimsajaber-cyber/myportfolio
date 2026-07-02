@@ -7,6 +7,9 @@ export const fallbackResponse =
 export const askBotPhoneNumber = "+970598396658";
 export const askBotPhoneDisplay = "+970-598396658";
 
+export const recommendationFormEndpoint = "https://formspree.io/f/mwvdwqkz";
+export const recommendationFormSource = "Karim portfolio AskBot";
+
 export const quickQuestions = [
   "What projects has Karim built?",
   "What technologies does Karim use?",
