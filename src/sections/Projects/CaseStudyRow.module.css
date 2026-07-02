@@ -202,7 +202,7 @@
   margin-left: 20px;
   padding: 0;
   list-style: none;
-  font-size:10px;
+  font-size: 10px;
 }
 
 .featureListTwoByTwo {
@@ -324,20 +324,34 @@
       "features"
       "tech"
       "actions";
-    gap: 0;
+    gap: var(--space-3);
   }
 
   .preview {
-    padding: var(--space-3) 0;
+    padding: var(--space-2) 0 var(--space-3);
   }
 
   .previewShell {
-    max-width: 16rem;
+    width: 100%;
+    max-width: min(100%, 20rem);
     margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .screenshot,
+  .previewShell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 11.5rem;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    object-position: center center;
   }
 
   .featureList {
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
 
   .featureListTwoByTwo {
@@ -346,6 +360,10 @@
 
   .actions {
     flex-direction: column;
+    justify-self: stretch;
+    width: 100%;
+    padding-top: var(--space-3);
+    margin-top: 0;
   }
 
   .actionBtn {
@@ -354,17 +372,68 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (max-width: 1023px) and (hover: none) and (pointer: coarse) {
   .card {
-    grid-template-columns: minmax(0, 1fr) minmax(9.5rem, 30%);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "preview"
+      "overview"
+      "contribution"
+      "features"
+      "tech"
+      "actions";
+    gap: var(--space-3);
+  }
+
+  .preview {
+    padding: var(--space-2) 0 var(--space-3);
+  }
+
+  .previewShell {
+    width: 100%;
+    max-width: min(100%, 20rem);
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .screenshot,
+  .previewShell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 11.5rem;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    object-position: center center;
   }
 
   .featureList {
     grid-template-columns: 1fr;
+    margin-left: 0;
   }
 
   .featureListTwoByTwo {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .actions {
+    flex-direction: column;
+    justify-self: stretch;
+    width: 100%;
+    padding-top: var(--space-3);
+    margin-top: 0;
+  }
+
+  .actionBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .featureListTwoByTwo {
+    grid-template-columns: 1fr;
   }
 }
 
