@@ -3,7 +3,6 @@ import ProductBrowserFrame from "./ProductBrowserFrame";
 import StreamlitChatIllustration from "./StreamlitChatIllustration";
 import {
   CheckIcon,
-  ExternalLinkIcon,
   GitHubIcon,
   ProjectBrandIcon,
   SectionDocumentIcon,
@@ -23,10 +22,16 @@ function SectionHeading({ icon, label }) {
   );
 }
 
-export default function CaseStudyRow({ project, isLast = false }) {
-  const demoLabel = project.liveDemo ? "Live Demo" : "View Details";
-  const demoHref = project.liveDemo ?? "#";
+function isActionHref(href) {
+  if (href == null) {
+    return false;
+  }
 
+  const trimmed = String(href).trim();
+  return trimmed.length > 0 && trimmed !== "#";
+}
+
+export default function CaseStudyRow({ project, isLast = false }) {
   const rowClass = [styles.row, isLast ? styles.last : ""].filter(Boolean).join(" ");
 
   return (
@@ -116,16 +121,18 @@ export default function CaseStudyRow({ project, isLast = false }) {
           </ul>
         </section>
 
-        <div className={styles.actions}>
-          <Button variant="primary" href={demoHref} className={styles.actionBtn}>
-            <span>{demoLabel}</span>
-            <ExternalLinkIcon />
-          </Button>
-          <Button variant="secondary" href={project.github} className={styles.actionBtn}>
-            <span>GitHub Repository</span>
-            <GitHubIcon />
-          </Button>
-        </div>
+        {isActionHref(project.github) ? (
+          <div className={styles.actions}>
+            <Button
+              variant="secondary"
+              href={project.github}
+              className={styles.actionBtn}
+            >
+              <span>GitHub Repository</span>
+              <GitHubIcon />
+            </Button>
+          </div>
+        ) : null}
       </div>
     </article>
   );

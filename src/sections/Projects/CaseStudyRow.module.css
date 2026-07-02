@@ -299,7 +299,8 @@
   gap: var(--space-3);
   padding-top: var(--space-4);
   margin-top: var(--space-1);
-  justify-self: end;
+  justify-content: center;
+  justify-self: stretch;
 }
 
 .actionBtn {
