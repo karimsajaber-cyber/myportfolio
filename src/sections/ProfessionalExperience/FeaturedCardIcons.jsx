@@ -17,6 +17,15 @@ function ChipGlyph({ children }) {
   );
 }
 
+function SoftIcon({ fill = "var(--color-primary-soft)", children }) {
+  return (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill={fill} />
+      {children}
+    </svg>
+  );
+}
+
 const skillIcons = {
   Python: (
     <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -153,19 +162,569 @@ const skillIcons = {
       />
     </svg>
   ),
-  "AI Integration": <ChipGlyph>AI</ChipGlyph>,
-  LLM: <ChipGlyph>LLM</ChipGlyph>,
-  "Speech-to-Text": <ChipGlyph>STT</ChipGlyph>,
-  "Text-to-Speech (TTS)": <ChipGlyph>TTS</ChipGlyph>,
-  "Responsive Design": <ChipGlyph>R</ChipGlyph>,
-  "Component Architecture": <ChipGlyph>CA</ChipGlyph>,
-  "Git & GitHub": <ChipGlyph>Git</ChipGlyph>,
-  Postman: <ChipGlyph>PM</ChipGlyph>,
-  "VS Code": <ChipGlyph>VS</ChipGlyph>,
+  "AI Integration": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#7C3AED" />
+      <circle cx="8" cy="6.2" r="2.1" fill="#fff" />
+      <path
+        d="M5.2 10.2c.8-1.2 2-1.9 2.8-1.9s2 .7 2.8 1.9"
+        stroke="#fff"
+        strokeWidth="0.9"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path
+        d="M3.2 5.2 4.4 6.4M11.6 5.2 10.4 6.4M8 3.2V4.4"
+        stroke="#DDD6FE"
+        strokeWidth="0.7"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  LLM: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#4F46E5" />
+      <circle cx="4.8" cy="6" r="1.1" fill="#C7D2FE" />
+      <circle cx="8" cy="4.8" r="1.1" fill="#E0E7FF" />
+      <circle cx="11.2" cy="6" r="1.1" fill="#C7D2FE" />
+      <circle cx="6.4" cy="9.2" r="1.1" fill="#E0E7FF" />
+      <circle cx="9.6" cy="9.2" r="1.1" fill="#C7D2FE" />
+      <path
+        d="M5.2 6.2 7.2 5.2M8.8 5.2 10.8 6.2M5.8 8.4 7.4 8.8M8.6 8.8 10.2 8.4"
+        stroke="#fff"
+        strokeWidth="0.55"
+        opacity="0.9"
+      />
+    </svg>
+  ),
+  "Speech-to-Text": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="6.1" y="3.2" width="3.8" height="5.8" rx="1.9" fill="var(--color-primary)" />
+      <path d="M4.8 8.2c0 1.8 1.4 3.2 3.2 3.2s3.2-1.4 3.2-3.2" stroke="var(--color-primary)" strokeWidth="0.8" fill="none" />
+      <path d="M8 11.4v1.4M6.2 12.8h3.6" stroke="var(--color-primary)" strokeWidth="0.75" strokeLinecap="round" />
+      <path d="M3.2 13.2h9.6" stroke="var(--color-primary)" strokeWidth="0.7" strokeLinecap="round" opacity="0.55" />
+    </svg>
+  ),
+  "Text-to-Speech (TTS)": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <path d="M4.2 6.8 6.8 5.2v5.6L4.2 9.2V6.8Z" fill="var(--color-primary)" />
+      <path d="M10.2 6.4c.8.8 1.2 1.7 1.2 2.6s-.4 1.8-1.2 2.6" stroke="var(--color-primary)" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+      <path d="M11.4 5c1.2 1.2 1.8 2.5 1.8 4s-.6 2.8-1.8 4" stroke="var(--color-primary)" strokeWidth="0.7" fill="none" strokeLinecap="round" opacity="0.65" />
+    </svg>
+  ),
+  "Responsive Design": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="2.8" y="4.2" width="6.4" height="4.8" rx="0.7" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.7" />
+      <rect x="8.8" y="6.2" width="4.4" height="7.2" rx="0.8" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.7" />
+      <path d="M4.6 6.4h2.8M4.6 7.6h2" stroke="var(--color-primary)" strokeWidth="0.55" strokeLinecap="round" />
+    </svg>
+  ),
+  "Component Architecture": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="2.8" y="2.8" width="10.4" height="3.2" rx="0.6" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="2.8" y="7.2" width="4.8" height="3.2" rx="0.6" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="8.4" y="7.2" width="4.8" height="3.2" rx="0.6" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="2.8" y="11.6" width="10.4" height="1.6" rx="0.4" fill="var(--color-primary)" opacity="0.25" />
+    </svg>
+  ),
+  "Git & GitHub": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#24292F" />
+      <path
+        fill="#fff"
+        d="M8 3.2c-2.7 0-4.8 2.2-4.8 4.9 0 2.2 1.4 4 3.4 4.6.2 0 .3-.1.3-.3v-1.1c-1.4.3-1.7-.7-1.7-.7-.2-.6-.6-.7-.6-.7-.5-.3 0-.3 0-.3.5 0 .8.5.8.5.5.8 1.2.6 1.5.4.1-.4.2-.6.4-.8-1.1-.1-2.3-.6-2.3-2.5 0-.6.2-1 .5-1.4 0-.1-.2-.7.1-1.4 0 0 .4-.1 1.4.5.4-.1.9-.2 1.3-.2s.9.1 1.3.2c1-.6 1.4-.5 1.4-.5.3.7.1 1.3.1 1.4.3.4.5.8.5 1.4 0 1.9-1.2 2.4-2.3 2.5.2.2.4.5.4 1v1.5c0 .2.1.3.3.3 2-.6 3.4-2.4 3.4-4.6C12.8 5.4 10.7 3.2 8 3.2Z"
+      />
+    </svg>
+  ),
+  Postman: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#FF6C37" />
+      <path
+        fill="#fff"
+        d="M8 3.4 4.6 8.2h2.2V12l3.2-4.8H7.8L8 3.4Z"
+      />
+    </svg>
+  ),
+  "VS Code": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#007ACC" />
+      <path
+        fill="#fff"
+        d="M10.8 3.2 5.2 7.2l2 1.1-2 1.1 5.6 4V3.2Zm-5.2 8.8 1.4-.8v-6.8l-1.4-.8v8.4Z"
+      />
+    </svg>
+  ),
+  "Supply Chain": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="2.6" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="6.4" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="10.2" y="6.2" width="3.2" height="2.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M4.2 5.4V4.2M8 5.4V4.2M11.8 5.4V4.2M4.2 4.2h7.6" stroke="var(--color-primary)" strokeWidth="0.7" strokeLinecap="round" />
+      <path d="M2.8 10.4h10.4" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  ),
+  Procurement: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <path d="M4.2 4.8h7.6l-.8 7.2H5L4.2 4.8Z" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinejoin="round" />
+      <path d="M6.2 3.6h3.6l.5 1.2H5.7l.5-1.2Z" fill="var(--color-primary)" />
+      <path d="M6.6 7.4h2.8" stroke="var(--color-primary)" strokeWidth="0.75" strokeLinecap="round" />
+    </svg>
+  ),
+  Operations: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <circle cx="8" cy="8" r="2.2" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.7" />
+      <path
+        d="M8 3.2v1.4M8 11.4v1.4M3.2 8h1.4M11.4 8h1.4M4.7 4.7l1 1M10.3 10.3l1 1M4.7 11.3l1-1M10.3 5.7l1-1"
+        stroke="var(--color-primary)"
+        strokeWidth="0.75"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  "Customer Support": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#0EA5E9" />
+      <path d="M4.2 7.2c0-2.1 1.7-3.8 3.8-3.8s3.8 1.7 3.8 3.8v2.4H4.2V7.2Z" fill="#fff" />
+      <path d="M3.4 9.6h1.4v1.4c0 .8 2.2 1.4 4.2 1.4s4.2-.6 4.2-1.4V9.6" stroke="#fff" strokeWidth="0.7" fill="none" />
+    </svg>
+  ),
+  CRM: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#2563EB" />
+      <circle cx="6" cy="6.4" r="1.5" fill="#fff" />
+      <circle cx="10.4" cy="6.4" r="1.5" fill="#DBEAFE" />
+      <path d="M3.8 11.2c.6-1.4 1.8-2.2 2.2-2.2s1.6.8 2.2 2.2M9.8 11.2c.6-1.4 1.4-2.2 1.8-2.2s1.2.8 1.8 2.2" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+    </svg>
+  ),
+  Communication: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <path d="M3.2 4.8h7.2a1 1 0 0 1 1 1v3.6a1 1 0 0 1-1 1H6.4L4.2 11.8V5.8a1 1 0 0 1 1-1Z" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M6.2 7.2h4.4M6.2 8.6h2.8" stroke="var(--color-primary)" strokeWidth="0.6" strokeLinecap="round" />
+      <path d="M9.6 6.4h3.2v2.8l-1.6-1-1.6 1V6.4Z" fill="var(--color-primary)" opacity="0.85" />
+    </svg>
+  ),
+  "Problem Solving": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#F59E0B" />
+      <path d="M8 3.2c-1.8 0-3.2 1.3-3.2 3 0 1.2.7 2.2 1.7 2.8L6 11.2h4l-.5-2.2c1-.6 1.7-1.6 1.7-2.8 0-1.7-1.4-3-3.2-3Z" fill="#fff" />
+      <path d="M6.6 12.4h2.8" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" />
+      <path d="M8 5.2v1.8M8 8.4h.01" stroke="#F59E0B" strokeWidth="0.8" strokeLinecap="round" />
+    </svg>
+  ),
+  "English Training": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#1D4ED8" />
+      <path d="M4.2 4.2h7.6v7.6H4.2V4.2Z" fill="#fff" />
+      <path d="M6 6.4h4.4M6 8h4.4M6 9.6H8.4" stroke="#1D4ED8" strokeWidth="0.65" strokeLinecap="round" />
+      <path d="M11.2 5.2v6.4" stroke="#fff" strokeWidth="0.8" />
+    </svg>
+  ),
+  Sales: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#16A34A" />
+      <path d="M3.6 11.2 6.4 8l2 1.8 3.6-4.2" stroke="#fff" strokeWidth="0.9" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10.8 5.6H12v1.8" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  Biotechnology: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#059669" />
+      <path d="M5.6 3.6c1.2 2.4 1.2 6.4 0 8.8M10.4 3.6c-1.2 2.4-1.2 6.4 0 8.8" stroke="#fff" strokeWidth="0.9" strokeLinecap="round" />
+      <path d="M4.8 6.4h6.4M4.4 9.6h7.2" stroke="#A7F3D0" strokeWidth="0.7" strokeLinecap="round" />
+    </svg>
+  ),
+  "Client Relations": (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <path d="M4.8 7.2c0-1.2 1.4-2.2 3.2-2.2s3.2 1 3.2 2.2" stroke="var(--color-primary)" strokeWidth="0.75" fill="none" />
+      <path d="M3.6 10.4c.8-1.2 2.2-1.8 4.4-1.8s3.6.6 4.4 1.8" stroke="var(--color-primary)" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+      <circle cx="11.6" cy="5.6" r="1.2" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+    </svg>
+  ),
+  Teamwork: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <circle cx="5.6" cy="6.2" r="1.4" fill="var(--color-primary)" />
+      <circle cx="10.4" cy="6.2" r="1.4" fill="var(--color-primary)" opacity="0.75" />
+      <path d="M2.8 11.4c.8-1.6 2-2.4 2.8-2.4s2 .8 2.8 2.4M8.8 11.4c.8-1.6 1.8-2.4 2.6-2.4s1.6.8 2.2 2.4" stroke="var(--color-primary)" strokeWidth="0.75" fill="none" strokeLinecap="round" />
+    </svg>
+  ),
+  SAP: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#0FAAFF" />
+      <path
+        d="M4.4 5.4c1-.7 2.2-.7 3.1 0 .8.6.8 1.5 0 2.1-.5.4-1.2.5-1.9.4-.2.9.2 1.6.7 2 .8.6 1.9.4 2.6-.4"
+        stroke="#fff"
+        strokeWidth="0.8"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9.4 5.6c.8.6 1 1.6.3 2.3-.5.5-1.1.7-1.7.6"
+        stroke="#fff"
+        strokeWidth="0.8"
+        fill="none"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+  Excel: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#217346" />
+      <path d="M4.2 3.8h5.2l3.4 3.4v7.2H4.2V3.8Z" fill="#fff" />
+      <path d="M9.4 3.8v3.4h3.4" fill="#E8F5EE" />
+      <path d="M5.6 8.2h4.8M5.6 10h4.8M7.2 6.8v5.2" stroke="#217346" strokeWidth="0.55" />
+    </svg>
+  ),
+  Reporting: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="3.2" y="3.6" width="9.6" height="9.6" rx="0.8" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M5.2 10.4V8.4M7.2 10.4V7.2M9.2 10.4V6.4" stroke="var(--color-primary)" strokeWidth="0.85" strokeLinecap="round" />
+      <path d="M5 5.2h6" stroke="var(--color-primary)" strokeWidth="0.55" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  ),
+  Inventory: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="3" y="4" width="4" height="3.2" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="8.8" y="4" width="4" height="3.2" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="3" y="8.4" width="4" height="3.2" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <rect x="8.8" y="8.4" width="4" height="3.2" rx="0.5" fill="var(--color-primary)" opacity="0.2" stroke="var(--color-primary)" strokeWidth="0.65" />
+    </svg>
+  ),
+  Logistics: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="var(--color-primary-soft)" />
+      <rect x="2.8" y="6.8" width="6.8" height="3.6" rx="0.6" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M9.6 7.8h2.4l1.2 2.6v2H9.6V7.8Z" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinejoin="round" />
+      <circle cx="5.2" cy="11.2" r="0.9" fill="var(--color-primary)" />
+      <circle cx="11.4" cy="11.2" r="0.9" fill="var(--color-primary)" />
+    </svg>
+  ),
+  Documentation: (
+    <SoftIcon>
+      <rect x="4.2" y="3.4" width="7.6" height="9.2" rx="0.8" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M5.8 6h4.4M5.8 7.6h4.4M5.8 9.2h2.8" stroke="var(--color-primary)" strokeWidth="0.6" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Issue Resolution": (
+    <SoftIcon fill="#0EA5E9">
+      <circle cx="8" cy="8" r="3.6" fill="#fff" />
+      <path d="M5.8 8.2 7.2 9.6 10.4 6.4" stroke="#0EA5E9" strokeWidth="0.85" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8 3.2v1.2M8 11.6v1.2" stroke="#BAE6FD" strokeWidth="0.65" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  MySQL: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#00758F" />
+      <ellipse cx="8" cy="5.2" rx="4.2" ry="1.5" fill="#fff" />
+      <path fill="#fff" d="M3.8 5.2v4.8c0 .9 1.9 1.6 4.2 1.6s4.2-.7 4.2-1.6V5.2" />
+      <ellipse cx="8" cy="10" rx="4.2" ry="1.5" fill="#fff" opacity="0.88" />
+      <path d="M6.4 7.6c.8.6 1.6.9 2.4.6" stroke="#00758F" strokeWidth="0.7" fill="none" strokeLinecap="round" />
+    </svg>
+  ),
+  SQLite: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#003B57" />
+      <ellipse cx="8" cy="5.2" rx="4.2" ry="1.5" fill="#7CC5E2" />
+      <path fill="#7CC5E2" d="M3.8 5.2v4.8c0 .9 1.9 1.6 4.2 1.6s4.2-.7 4.2-1.6V5.2" />
+      <path d="M8 3.6v8.8" stroke="#fff" strokeWidth="0.55" opacity="0.45" />
+    </svg>
+  ),
+  "LLM Applications": (
+    <SoftIcon fill="#4F46E5">
+      <circle cx="5.2" cy="6.4" r="1.1" fill="#C7D2FE" />
+      <circle cx="8" cy="5.2" r="1.1" fill="#E0E7FF" />
+      <circle cx="10.8" cy="6.4" r="1.1" fill="#C7D2FE" />
+      <rect x="4.8" y="8.4" width="6.4" height="2.4" rx="0.5" fill="#fff" opacity="0.95" />
+    </SoftIcon>
+  ),
+  "Prompt Engineering": (
+    <SoftIcon fill="#7C3AED">
+      <rect x="3.6" y="4.4" width="8.8" height="5.6" rx="0.8" fill="#fff" />
+      <path d="M5.2 6.4h5.6M5.2 8h3.6" stroke="#7C3AED" strokeWidth="0.65" strokeLinecap="round" />
+      <path d="M10.8 3.6 11.8 5.6 9.8 5.2Z" fill="#DDD6FE" />
+    </SoftIcon>
+  ),
+  "AI-Assisted Development": (
+    <SoftIcon fill="#4F46E5">
+      <path d="M4.2 6.2 6 8 4.2 9.8M11.8 6.2 10 8l1.8 1.8" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8 4.4v1.2M8 10.4v1.2M11.2 5.2l-1 .8M5.8 10l1 .8" stroke="#C7D2FE" strokeWidth="0.6" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "API Integration": (
+    <SoftIcon>
+      <circle cx="5.2" cy="8" r="1.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <circle cx="10.8" cy="8" r="1.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M6.7 8h2.6" stroke="var(--color-primary)" strokeWidth="0.75" strokeLinecap="round" />
+      <path d="M3.6 5.2h8.8M3.6 10.8h8.8" stroke="var(--color-primary)" strokeWidth="0.55" strokeLinecap="round" opacity="0.45" />
+    </SoftIcon>
+  ),
+  "Technical Support": (
+    <SoftIcon fill="#0284C7">
+      <path d="M4.2 7.2c0-2 1.6-3.6 3.6-3.6h.4c2 0 3.6 1.6 3.6 3.6v2.2H4.2V7.2Z" fill="#fff" />
+      <path d="M3.4 9.4h1.4v1.2c0 .8 2 1.4 3.8 1.4s3.8-.6 3.8-1.4V9.4" stroke="#fff" strokeWidth="0.65" fill="none" />
+      <path d="M8 4.8v1" stroke="#BAE6FD" strokeWidth="0.65" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Product Thinking": (
+    <SoftIcon fill="#F59E0B">
+      <rect x="4.4" y="5.6" width="7.2" height="5.6" rx="0.7" fill="#fff" />
+      <path d="M6.4 5.6V4.8c0-.7.6-1.2 1.4-1.2h.4c.8 0 1.4.5 1.4 1.2v.8" stroke="#F59E0B" strokeWidth="0.65" fill="none" />
+      <path d="M8 7.6v2.2" stroke="#F59E0B" strokeWidth="0.75" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Cross-functional Collaboration": (
+    <SoftIcon>
+      <circle cx="5.2" cy="6.2" r="1.3" fill="var(--color-primary)" />
+      <circle cx="10.8" cy="6.2" r="1.3" fill="var(--color-primary)" opacity="0.75" />
+      <circle cx="8" cy="10.4" r="1.3" fill="var(--color-primary)" opacity="0.55" />
+      <path d="M6.2 6.8 7.4 9.6M9.8 6.8 8.6 9.6M6.4 6.6h3.2" stroke="var(--color-primary)" strokeWidth="0.6" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "System Architecture": (
+    <SoftIcon>
+      <rect x="3.2" y="3.2" width="9.6" height="2.4" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <rect x="3.2" y="6.8" width="4.4" height="2.4" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <rect x="8.4" y="6.8" width="4.4" height="2.4" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <rect x="3.2" y="10.4" width="9.6" height="2" rx="0.4" fill="var(--color-primary)" opacity="0.22" />
+    </SoftIcon>
+  ),
+  "API Design": (
+    <SoftIcon>
+      <rect x="3.2" y="4.4" width="9.6" height="7.2" rx="0.8" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <path d="M5.2 7h5.6M5.2 8.8h3.6" stroke="var(--color-primary)" strokeWidth="0.6" strokeLinecap="round" />
+      <path d="M11.2 3.6 12.4 5.2 10.4 4.8Z" fill="var(--color-primary)" />
+    </SoftIcon>
+  ),
+  "Testing & Quality Assurance": (
+    <SoftIcon fill="#16A34A">
+      <path d="M4.8 4.2h6.4l1.2 1.8v5.2H3.6V6l1.2-1.8Z" fill="#fff" />
+      <path d="M6.2 9.2 7.4 10.4 9.8 7.6" stroke="#16A34A" strokeWidth="0.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </SoftIcon>
+  ),
+  "Code Review": (
+    <SoftIcon>
+      <rect x="3.6" y="4.8" width="8.8" height="6.4" rx="0.7" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.65" />
+      <circle cx="8" cy="7.6" r="1.8" fill="none" stroke="var(--color-primary)" strokeWidth="0.7" />
+      <path d="M9.4 6.8 10.8 5.4" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  Troubleshooting: (
+    <SoftIcon fill="#F59E0B">
+      <circle cx="7.2" cy="7.2" r="2.8" fill="none" stroke="#fff" strokeWidth="0.9" />
+      <path d="M9.4 9.4 12 12" stroke="#fff" strokeWidth="0.9" strokeLinecap="round" />
+      <path d="M7.2 5.8v2.2" stroke="#F59E0B" strokeWidth="0.75" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Business Analysis": (
+    <SoftIcon>
+      <path d="M4.2 11.2V8.4M7.2 11.2V6.8M10.2 11.2V5.2" stroke="var(--color-primary)" strokeWidth="0.9" strokeLinecap="round" />
+      <path d="M3.6 11.6h8.8" stroke="var(--color-primary)" strokeWidth="0.65" strokeLinecap="round" opacity="0.45" />
+    </SoftIcon>
+  ),
+  "Root Cause Analysis": (
+    <SoftIcon fill="#DC2626">
+      <circle cx="8" cy="6.4" r="2.2" fill="none" stroke="#fff" strokeWidth="0.8" />
+      <circle cx="8" cy="6.4" r="0.7" fill="#fff" />
+      <path d="M8 8.6v2.2M6.4 12h3.2" stroke="#fff" strokeWidth="0.7" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Performance Optimization": (
+    <SoftIcon fill="#F59E0B">
+      <path d="M9.2 3.6 5.6 8.8h2.8L6.8 12.4l3.6-5.2H7.6l1.6-3.6Z" fill="#fff" />
+    </SoftIcon>
+  ),
+  "Process Improvement": (
+    <SoftIcon>
+      <path d="M10.8 4.8c-2.2 0-4 1.6-4 3.6s1.8 3.6 4 3.6" stroke="var(--color-primary)" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+      <path d="M10.8 8.4h2.4l-1.2 2-1.2-2Z" fill="var(--color-primary)" />
+      <path d="M5.2 11.2c2.2 0 4-1.6 4-3.6S7.4 4 5.2 4" stroke="var(--color-primary)" strokeWidth="0.8" fill="none" strokeLinecap="round" opacity="0.55" />
+    </SoftIcon>
+  ),
+  "Delivery Pipelines": (
+    <SoftIcon>
+      <circle cx="4.4" cy="8" r="1.2" fill="var(--color-primary)" />
+      <circle cx="8" cy="8" r="1.2" fill="var(--color-primary)" opacity="0.75" />
+      <circle cx="11.6" cy="8" r="1.2" fill="var(--color-primary)" opacity="0.55" />
+      <path d="M5.6 8h1.6M9.2 8h1.6" stroke="#fff" strokeWidth="0.75" strokeLinecap="round" />
+      <path d="M4.4 5.2v5.6M11.6 5.2v5.6" stroke="var(--color-primary)" strokeWidth="0.55" strokeLinecap="round" opacity="0.35" />
+    </SoftIcon>
+  ),
+  HTML5: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#E34F26" />
+      <path d="M4.2 3.6h7.6l-.6 7.2-3.2.9-3.2-.9L4.2 3.6Z" fill="#fff" />
+      <path d="M8 5.2v6.2l1.8-.5.3-3.4H7.2l.1-1.2h2.9l.1-1.4H6.1l.1-1.2h4.5l-.2 2.4H9.1l-.2 2.2L8 10.1V5.2Z" fill="#E34F26" />
+    </svg>
+  ),
+  CSS3: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#1572B6" />
+      <path d="M4.2 3.6h7.6l-.6 7.2-3.2.9-3.2-.9L4.2 3.6Z" fill="#fff" />
+      <path d="M8 5.2v6.2l1.8-.5.3-3.4H7.4l.4 3.4-.2.1-.8.2-.8-.2-.1-.1.1-1h-1.2l.2 1.6 1.5.4 1.5-.4.3-3.2H6.8l.1-1.2h4.6l.1-1.4H6.1l.1-1.2h4.5l-.2 2.4H8Z" fill="#1572B6" />
+    </svg>
+  ),
+  "Web Speech API (Speech-to-Text & Text-to-Speech)": (
+    <SoftIcon>
+      <rect x="3.2" y="4.8" width="3.2" height="5.2" rx="1.6" fill="var(--color-primary)" />
+      <path d="M4.8 11.2c0 .8.6 1.4 1.4 1.4" stroke="var(--color-primary)" strokeWidth="0.6" fill="none" />
+      <path d="M9.6 6.8 11.2 5.6v4.8L9.6 9.2V6.8Z" fill="var(--color-primary)" />
+      <path d="M12 7.2c.4.6.6 1.2.6 1.8s-.2 1.2-.6 1.8" stroke="var(--color-primary)" strokeWidth="0.6" fill="none" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Voice Recognition": (
+    <SoftIcon fill="#7C3AED">
+      <path d="M3.6 8c0-2.4 2-4.4 4.4-4.4s4.4 2 4.4 4.4" stroke="#fff" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+      <path d="M4.4 8h1.2M6.8 6.4v3.2M8 5.6v4.8M9.2 6.8v2.4M10.4 8h1.2" stroke="#fff" strokeWidth="0.65" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "State Management": (
+    <SoftIcon>
+      <rect x="3.4" y="4" width="3.6" height="3.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <rect x="9" y="4" width="3.6" height="3.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <rect x="6.2" y="8.4" width="3.6" height="3.6" rx="0.5" fill="var(--color-primary)" opacity="0.18" stroke="var(--color-primary)" strokeWidth="0.6" />
+      <path d="M5 7.2 7.2 8.2M11 7.2 8.8 8.2" stroke="var(--color-primary)" strokeWidth="0.55" />
+    </SoftIcon>
+  ),
+  Bootstrap: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#7952B3" />
+      <path fill="#fff" d="M5.2 4.8h3.4c1.8 0 2.8.9 2.8 2.2 0 .9-.5 1.6-1.3 2 .9.3 1.5 1.1 1.5 2.1 0 1.5-1.2 2.5-3.2 2.5H5.2V4.8Zm1.2 3.4h1.9c.8 0 1.2-.4 1.2-1s-.4-1-1.2-1H6.4v2Zm0 3.8h2.2c.9 0 1.4-.4 1.4-1.1s-.5-1.1-1.4-1.1H6.4v2.2Z" />
+    </svg>
+  ),
+  Authentication: (
+    <SoftIcon fill="#1D4ED8">
+      <rect x="5.2" y="7.2" width="5.6" height="4.8" rx="0.8" fill="#fff" />
+      <path d="M6.4 7.2V5.8c0-1 .8-1.8 1.8-1.8s1.8.8 1.8 1.8v1.4" stroke="#fff" strokeWidth="0.75" fill="none" />
+      <circle cx="8" cy="9.2" r="0.7" fill="#1D4ED8" />
+    </SoftIcon>
+  ),
+  "CRUD Operations": (
+    <SoftIcon>
+      <rect x="3.2" y="3.6" width="4" height="3.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <rect x="8.8" y="3.6" width="4" height="3.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <rect x="3.2" y="8.8" width="4" height="3.6" rx="0.5" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <rect x="8.8" y="8.8" width="4" height="3.6" rx="0.5" fill="var(--color-primary)" opacity="0.2" stroke="var(--color-primary)" strokeWidth="0.55" />
+    </SoftIcon>
+  ),
+  "AI Recommendations": (
+    <SoftIcon fill="#7C3AED">
+      <path d="M8 3.6 9 6.2 11.6 6.6 9.8 8.4 10.4 11 8 9.6 5.6 11 6.2 8.4 4.4 6.6 7 6.2 8 3.6Z" fill="#fff" />
+      <circle cx="12.4" cy="4.4" r="0.7" fill="#DDD6FE" />
+    </SoftIcon>
+  ),
+  Streamlit: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#FF4B4B" />
+      <path d="M4.8 4.8h6.4v1.6H8.8v6.4H7.2V6.4H4.8V4.8Z" fill="#fff" />
+      <path d="M10.4 4.8h1.6v6.4h-1.6V4.8Z" fill="#fff" opacity="0.85" />
+    </svg>
+  ),
+  "Session State": (
+    <SoftIcon>
+      <ellipse cx="8" cy="5.6" rx="3.6" ry="1.2" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M4.4 5.6v3.6c0 .7 1.6 1.2 3.6 1.2s3.6-.5 3.6-1.2V5.6" fill="none" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <circle cx="11.2" cy="10.8" r="1.6" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M11.2 9.8v.8l.5.5" stroke="var(--color-primary)" strokeWidth="0.5" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  "Chat Interface": (
+    <SoftIcon fill="#0EA5E9">
+      <path d="M3.6 4.8h5.6a1 1 0 0 1 1 1v2.8a1 1 0 0 1-1 1H6.4L4.4 10.8V5.8a1 1 0 0 1 1-1Z" fill="#fff" />
+      <path d="M8.8 6.4h3.6a1 1 0 0 1 1 1v2.4a1 1 0 0 1-1 1h-1.6L9.6 12v-2.4H8.8a1 1 0 0 1-1-1V7.4a1 1 0 0 1 1-1Z" fill="#BAE6FD" />
+    </SoftIcon>
+  ),
+  Flask: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#000" />
+      <path
+        fill="#fff"
+        d="M6.2 3.2h3.6l.4 1.6h1.4l-2.8 5.2v3.6c0 .7-.6 1.2-1.4 1.2H7c-.8 0-1.4-.5-1.4-1.2V9.8L2.8 4.8h1.4l.4-1.6Z"
+      />
+      <path d="M6.4 4.8h3.2" stroke="#000" strokeWidth="0.5" strokeLinecap="round" opacity="0.35" />
+    </svg>
+  ),
+  Git: (
+    <SoftIcon fill="#F05032">
+      <circle cx="5.4" cy="10.6" r="1.3" fill="#fff" />
+      <circle cx="10.2" cy="6.2" r="1.3" fill="#fff" />
+      <circle cx="10.2" cy="10.6" r="1.3" fill="#fff" />
+      <path
+        d="M5.4 9.3V7.2c0-.9.7-1.6 1.6-1.6h1.4"
+        stroke="#fff"
+        strokeWidth="0.8"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M10.2 7.5v2.4" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" />
+    </SoftIcon>
+  ),
+  GitHub: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#24292F" />
+      <path
+        fill="#fff"
+        d="M8 3.2c-2.7 0-4.8 2.2-4.8 4.9 0 2.2 1.4 4 3.4 4.6.2 0 .3-.1.3-.3v-1.1c-1.4.3-1.7-.7-1.7-.7-.2-.6-.6-.7-.6-.7-.5-.3 0-.3 0-.3.5 0 .8.5.8.5.5.8 1.2.6 1.5.4.1-.4.2-.6.4-.8-1.1-.1-2.3-.6-2.3-2.5 0-.6.2-1 .5-1.4 0-.1-.2-.7.1-1.4 0 0 .4-.1 1.4.5.4-.1.9-.2 1.3-.2s.9.1 1.3.2c1-.6 1.4-.5 1.4-.5.3.7.1 1.3.1 1.4.3.4.5.8.5 1.4 0 1.9-1.2 2.4-2.3 2.5.2.2.4.5.4 1v1.5c0 .2.1.3.3.3 2-.6 3.4-2.4 3.4-4.6C12.8 5.4 10.7 3.2 8 3.2Z"
+      />
+    </svg>
+  ),
+  AWS: (
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <rect width="16" height="16" rx="3" fill="#232F3E" />
+      <path
+        fill="#FF9900"
+        d="M4.6 10.4c2.4 1.3 5.4 1.3 7.8 0 .2-.1.4 0 .5.2l.3.5c.1.2 0 .4-.2.5-2.7 1.5-6 1.5-8.7 0-.2-.1-.3-.3-.2-.5l.3-.5c.1-.2.3-.2.5-.2Z"
+      />
+      <path
+        fill="#fff"
+        d="m8.2 4.8 2.6 4.4H9.4l-.4-.7H6.6l-.4.7H5l2.8-4.7h.4Z"
+      />
+    </svg>
+  ),
+  "Database Design": (
+    <SoftIcon>
+      <ellipse cx="8" cy="5.4" rx="4" ry="1.3" fill="#fff" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M4 5.4v3.2c0 .7 1.8 1.3 4 1.3s4-.6 4-1.3V5.4" fill="none" stroke="var(--color-primary)" strokeWidth="0.55" />
+      <path d="M5.2 10.2h5.6M6.4 11.4h3.2" stroke="var(--color-primary)" strokeWidth="0.6" strokeLinecap="round" />
+      <path d="M11.2 4.2 12.4 5.4 11.2 6.6" stroke="var(--color-primary)" strokeWidth="0.55" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </SoftIcon>
+  ),
+  "Continuous Improvement": (
+    <SoftIcon fill="#16A34A">
+      <path
+        d="M8 4.2c-2.2 0-4 1.6-4 3.6 0 1.2.6 2.2 1.6 2.8"
+        stroke="#fff"
+        strokeWidth="0.8"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M5.2 6.2 4.4 4.8 5.8 4.8" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.4 10.8h5.2M9.2 8.4v4.8" stroke="#fff" strokeWidth="0.85" strokeLinecap="round" />
+      <path d="M7.4 9.4 9.2 8.4 11 9.4" stroke="#fff" strokeWidth="0.75" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </SoftIcon>
+  ),
+};
+
+const skillIconAliases = {
+  Supply: "Supply Chain",
+  "C#OOPS": "C# OOPs",
+  "Software Documentation": "Documentation",
+  "Technical Documentation": "Documentation",
 };
 
 export function SkillChipIcon({ label }) {
-  return skillIcons[label] ?? <ChipGlyph>•</ChipGlyph>;
+  const iconKey = skillIconAliases[label] ?? label;
+  return skillIcons[iconKey] ?? <ChipGlyph>•</ChipGlyph>;
 }
 
 export function StarIcon() {

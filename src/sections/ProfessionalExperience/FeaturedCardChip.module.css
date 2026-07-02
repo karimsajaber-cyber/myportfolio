@@ -12,6 +12,15 @@
   border: 1px solid #e2e8f0;
   border-radius: 999px;
   white-space: nowrap;
+  transition: var(--skill-chip-transition);
+}
+
+.chip:hover {
+  transform: translateY(var(--skill-chip-lift-hover));
+  background-color: #ffffff;
+  border-color: #c7d6f8;
+  box-shadow: var(--skill-chip-shadow-hover);
+  color: var(--color-primary);
 }
 
 .icon {
@@ -21,6 +30,11 @@
   width: 0.875rem;
   height: 0.875rem;
   flex-shrink: 0;
+  transition: var(--skill-icon-transition);
+}
+
+.chip:hover .icon {
+  transform: scale(1.1);
 }
 
 .icon svg {
@@ -31,4 +45,19 @@
 
 .label {
   line-height: 1.2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .icon {
+    transition: none;
+  }
+
+  .chip:hover {
+    transform: none;
+  }
+
+  .chip:hover .icon {
+    transform: none;
+  }
 }

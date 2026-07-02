@@ -1,5 +1,6 @@
 import bitemenuImage from "../../review-screenshots/ss.png";
 import brokershubPreviewImage from "../../review-screenshots/brokershub-preview.png";
+import smartStudyPreviewImage from "../../review-screenshots/smart-study-preview.png";
 
 export const projectsSection = {
   eyebrow: "Case Studies",
@@ -19,26 +20,23 @@ export const projects = [
     contribution:
       "Owned core product flows end to end, from ordering logic and menu presentation through deployment-ready UI built for real service environments.",
     features: [
-      "Voice and manual ordering paths",
-      "Live menu browsing",
-      "Order flow for front-of-house use",
-      "Responsive product interface",
-      "Production-oriented frontend structure",
-      "Deployment-ready product UI",
+      "Voice and manual ordering paths with seamless user interactions",
+      "Live menu browsing with intuitive navigation and real-time updates",
+      "Order flow optimized for fast and efficient front-of-house operations",
+      "Responsive product interface across desktop, tablet, and mobile devices",
+      "Production-oriented structure built for scalability and maintainability",
+      "Deployment-ready product UI following modern frontend development",
     ],
     technicalHighlights: [
       "Python",
       "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Web Speech API (Speech-to-Text & Text-to-Speech)",
+      "TTS Speech API",
       "Voice Recognition",
-      "Component Architecture",
       "State Management",
-      "Responsive Design",
+      "Web Speech"
     ],
     image: bitemenuImage,
-    github: "#",
+    github: "https://github.com/karimsajaber-cyber/BiteMenu",
     liveDemo: "#",
     previewUrl: "bitemenu.app",
     useIllustration: false,
@@ -54,28 +52,26 @@ export const projects = [
     contribution:
       "Led project architecture and implemented core backend and frontend features, with emphasis on scalable workflows, usability, and database design.",
     features: [
-      "AI-powered provider recommendations",
-      "Smart search with category and city filters",
-      "End-to-end booking workflow",
-      "Role-based dashboards",
-      "Reviews and ratings",
+      "Reviews and ratings with verified customer feedback",
+      "End-to-end booking workflow from request to completion",
+      "End-to-end booking workflow from request to completion",
+      "AI-powered provider chatbot for smarter customer assistance",
+      "Built-in real-time chat for seamless client and broker",
+      "Smart API integrations with e-commerce like Amazon and Shein",
+
+
+
     ],
     technicalHighlights: [
       "Python",
       "Django",
       "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Bootstrap",
       "SQLite",
       "Authentication",
-      "CRUD Operations",
-      "REST APIs",
-      "AI Recommendations",
-      "Responsive Design",
+      "Amazon APIs",
     ],
     image: brokershubPreviewImage,
-    github: "#",
+    github: "https://github.com/karimsajaber-cyber/Brokers_Hub_2026",
     liveDemo: "#",
     previewUrl: "brokershub.app",
     useIllustration: false,
@@ -95,16 +91,17 @@ export const projects = [
       "Session-based conversation state",
       "Streamlit-native input controls",
     ],
+    featuresLayout: "two-by-two",
     technicalHighlights: [
       "Python",
+      "Chat Interface",
       "Streamlit",
       "Session State",
-      "Chat Interface",
     ],
-    image: null,
-    github: "#",
+    image: smartStudyPreviewImage,
+    github: "https://github.com/karimsajaber-cyber/smart-study-mock-chat",
     liveDemo: null,
     previewUrl: "localhost:8501",
-    useIllustration: true,
+    useIllustration: false,
   },
 ];

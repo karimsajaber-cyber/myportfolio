@@ -16,8 +16,15 @@ export default function Button({
     .join(" ");
 
   if (href) {
+    const isResume = href.endsWith(".pdf");
+
     return (
-      <a href={href} className={classes} {...props}>
+      <a
+        href={href}
+        className={classes}
+        download={isResume ? "" : undefined}
+        {...props}
+      >
         {children}
       </a>
     );

@@ -86,6 +86,14 @@
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  transition: var(--skill-chip-transition);
+}
+
+.techChip:hover {
+  transform: translateY(var(--skill-chip-lift-hover));
+  border-color: #c7d6f8;
+  box-shadow: var(--skill-chip-shadow-hover);
+  color: var(--color-primary);
 }
 
 .actions {

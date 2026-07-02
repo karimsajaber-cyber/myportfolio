@@ -14,6 +14,14 @@
   border-radius: 28px;
   box-shadow: 0 10px 30px rgba(26, 61, 158, 0.06);
   overflow: visible;
+  transform-origin: center center;
+  transition: var(--card-zoom-transition);
+}
+
+.card:hover {
+  transform: scale(var(--card-zoom-hover));
+  border-color: #c7d6f8;
+  box-shadow: var(--card-zoom-shadow-hover);
 }
 
 .card::before {
@@ -141,9 +149,25 @@
   max-width: 36rem;
   white-space: pre-line;
   margin: var(--space-3) 0 0;
+  padding-bottom: var(--space-3);
   font-size: var(--text-base);
   line-height: 1.65;
   color: var(--color-text-muted);
+}
+
+.summary::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1.5px;
+  margin-top: var(--space-3);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.12),
+    rgba(37, 99, 235, 0.52) 50%,
+    rgba(37, 99, 235, 0.12)
+  );
+  border-radius: 999px;
 }
 
 .bullets {
@@ -161,7 +185,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--space-2);
-  font-size: var(--text-base);
+  font-size:15px;
   line-height: 1.5;
   color: var(--color-text-muted);
 }
@@ -184,17 +208,38 @@
   height: 0.625rem;
 }
 
+.techSection {
+  margin-top: var(--space-1);
+  padding-top: var(--space-4);
+}
+
+.techSection::before {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1.5px;
+  margin: 0 auto var(--space-4);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.12),
+    rgba(37, 99, 235, 0.52) 50%,
+    rgba(37, 99, 235, 0.12)
+  );
+  border-radius: 999px;
+}
+
 .techRow {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-2);
-  margin: var(--space-2) 0 0;
-  padding: 15px 0 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.techRow:first-of-type {
-  margin-top: var(--space-4);
+.techRow + .techRow {
+  margin-top: 4px;
 }
 
 .techRow li {
@@ -240,10 +285,6 @@
     grid-template-columns: 1fr;
     column-gap: 0;
   }
-
-  .techRow {
-    padding-top: 0;
-  }
 }
 
 @media (max-width: 640px) {
@@ -253,5 +294,15 @@
 
   .headerRow {
     gap: var(--space-2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }

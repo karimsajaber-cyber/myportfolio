@@ -62,15 +62,17 @@ export default function FeaturedCard() {
           ))}
         </ul>
 
-        {data.skillRows.map((row) => (
-          <ul key={row.join("-")} className={styles.techRow}>
-            {row.map((skill) => (
-              <li key={skill}>
-                <FeaturedCardChip label={skill} />
-              </li>
-            ))}
-          </ul>
-        ))}
+        <div className={styles.techSection}>
+          {data.skillRows.map((row) => (
+            <ul key={row.join("-")} className={styles.techRow}>
+              {row.map((skill) => (
+                <li key={skill}>
+                  <FeaturedCardChip label={skill} />
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
     </article>
   );

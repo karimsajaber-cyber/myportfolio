@@ -1,29 +1,76 @@
 .section {
-  background-color: var(--color-surface);
-  padding-top: var(--space-6);
+  background-color: transparent;
 }
 
 .header {
   margin-bottom: var(--space-5);
 }
 
+.cardWrap {
+  position: relative;
+  z-index: 0;
+}
+
+.cardWrap:has(.card:hover) {
+  z-index: 2;
+}
+
 .card {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
   padding: var(--space-5);
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition:
-    border-color var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
+  transform-origin: center center;
+  transition: var(--card-zoom-transition);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("../../assets/featured-card-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card:hover {
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-md);
+  transform: scale(var(--card-zoom-hover));
+  border-color: var(--card-zoom-border-hover);
+  box-shadow: var(--card-zoom-shadow-hover);
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: var(--space-6);
+  right: var(--space-6);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    color-mix(in srgb, var(--color-accent) 30%, transparent) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.card:hover .cardAccent {
+  opacity: 1;
 }
 
 .content {
@@ -180,12 +227,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding-top: var(--space-5);
-  }
-}
-
 @media (max-width: 640px) {
   .header {
     margin-bottom: var(--space-4);
@@ -194,6 +235,11 @@
   .card {
     padding: var(--space-4);
     gap: var(--space-4);
+  }
+
+  .cardAccent {
+    left: var(--space-4);
+    right: var(--space-4);
   }
 
   .content {
@@ -234,7 +280,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card {
+  .card,
+  .cardAccent {
     transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }

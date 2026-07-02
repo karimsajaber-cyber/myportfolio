@@ -1,6 +1,5 @@
 .section {
-  background-color: var(--color-surface);
-  padding-top: var(--space-6);
+  background-color: transparent;
 }
 
 .header {
@@ -10,12 +9,6 @@
 .list {
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding-top: var(--space-5);
-  }
 }
 
 @media (max-width: 640px) {

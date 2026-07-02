@@ -1,6 +1,25 @@
 import Button from "../../components/ui/Button";
 import { hero, site } from "../../content/site";
+import {
+  AvailabilityIcon,
+  HeroNavIcon,
+} from "./HeroNavIcons";
 import styles from "./Hero.module.css";
+
+function scrollToSection(event, href) {
+  if (!href?.startsWith("#")) {
+    return;
+  }
+
+  const target = document.getElementById(href.slice(1));
+
+  if (!target) {
+    return;
+  }
+
+  event.preventDefault();
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function Hero() {
   const project = hero.featuredProject;
@@ -16,16 +35,27 @@ export default function Hero() {
       <div className={styles.heroWrap}>
         <div className={styles.composition}>
           <header className={styles.navStrip}>
-            <a href="#hero" className={styles.logo}>
-              {site.name}
+            <a
+              href="#hero"
+              className={styles.logo}
+              onClick={(event) => scrollToSection(event, "#hero")}
+            >
+              {site.navBrand}
             </a>
 
             <nav className={styles.nav} aria-label="Primary">
               <ul className={styles.navList}>
                 {site.nav.map((item) => (
                   <li key={item.href}>
-                    <a href={item.href} className={styles.navLink}>
-                      {item.label}
+                    <a
+                      href={item.href}
+                      className={styles.navLink}
+                      onClick={(event) => scrollToSection(event, item.href)}
+                    >
+                      <span className={styles.navLinkIcon} aria-hidden="true">
+                        <HeroNavIcon name={item.icon} />
+                      </span>
+                      <span className={styles.navLinkLabel}>{item.label}</span>
                     </a>
                   </li>
                 ))}
@@ -33,7 +63,12 @@ export default function Hero() {
             </nav>
 
             <div className={styles.navActions}>
-              <p className={styles.availability}>{site.availability}</p>
+              <p className={styles.availability}>
+                <span className={styles.availabilityIcon} aria-hidden="true">
+                  <AvailabilityIcon />
+                </span>
+                <span>{site.availability}</span>
+              </p>
               <Button
                 variant="secondary"
                 href={site.resume.href}

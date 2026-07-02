@@ -4,8 +4,11 @@
    * Primary and accent share the same blue identity across all sections.
    */
 
-  /* Background: warm limestone — softer than clinical #FAFAFA */
-  --color-bg: #f5f3ee;
+  /* Page canvas: soft vertical gradient */
+  --page-bg: linear-gradient(180deg, #f4f8ff 0%, #f9fbfe 35%, #ffffff 100%);
+
+  /* Solid fallback for chips, hovers, and small surfaces */
+  --color-bg: #f9fbfe;
 
   /* Surfaces: clean white for cards and elevated panels */
   --color-surface: #ffffff;

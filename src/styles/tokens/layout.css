@@ -1,8 +1,8 @@
 :root {
   --container-max: 72rem; /* 1152px */
 
-  --section-padding-y: var(--space-9);
-  --section-padding-y-mobile: var(--space-7);
+  --section-padding-y: var(--space-6);
+  --section-padding-y-mobile: var(--space-5);
 
   --header-height: 4.5rem;
 

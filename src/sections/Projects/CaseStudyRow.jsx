@@ -11,6 +11,7 @@ import {
   SectionPersonIcon,
   SectionStarIcon,
 } from "./CaseStudyIcons";
+import { SkillChipIcon } from "../ProfessionalExperience/FeaturedCardIcons";
 import styles from "./CaseStudyRow.module.css";
 
 function SectionHeading({ icon, label }) {
@@ -73,7 +74,14 @@ export default function CaseStudyRow({ project, isLast = false }) {
 
         <section className={styles.features}>
           <SectionHeading icon={<SectionStarIcon />} label="Key Features" />
-          <ul className={styles.featureList}>
+          <ul
+            className={[
+              styles.featureList,
+              project.featuresLayout === "two-by-two" ? styles.featureListTwoByTwo : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
             {project.features.map((feature) => (
               <li key={feature} className={styles.featureItem}>
                 <span className={styles.featureCheck} aria-hidden="true">
@@ -93,7 +101,12 @@ export default function CaseStudyRow({ project, isLast = false }) {
           >
             {project.technicalHighlights.map((item) => (
               <li key={item}>
-                <span className={styles.techChip}>{item}</span>
+                <span className={styles.techChip}>
+                  <span className={styles.techChipIcon} aria-hidden="true">
+                    <SkillChipIcon label={item} />
+                  </span>
+                  {item}
+                </span>
               </li>
             ))}
           </ul>

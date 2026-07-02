@@ -32,10 +32,12 @@ export default function Research() {
           className={`${styles.header} ${styles.reveal}`}
         />
 
-        <article
-          className={`${styles.card} ${styles.revealDelayed}`}
-          aria-labelledby={`publication-${publication.id}`}
-        >
+        <div className={`${styles.cardWrap} ${styles.revealDelayed}`}>
+          <article
+            className={styles.card}
+            aria-labelledby={`publication-${publication.id}`}
+          >
+          <div className={styles.cardAccent} aria-hidden="true" />
           <div className={styles.content}>
             <header className={styles.brand}>
               <div className={styles.brandIcon} aria-hidden="true">
@@ -98,6 +100,7 @@ export default function Research() {
             <PublicationJournalVisual title={publication.title} />
           </div>
         </article>
+        </div>
       </Container>
     </Section>
   );
