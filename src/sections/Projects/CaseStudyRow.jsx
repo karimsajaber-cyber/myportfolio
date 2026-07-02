@@ -30,7 +30,11 @@ export default function CaseStudyRow({ project, isLast = false }) {
   const rowClass = [styles.row, isLast ? styles.last : ""].filter(Boolean).join(" ");
 
   return (
-    <article className={rowClass} aria-labelledby={`project-${project.id}`}>
+    <article
+      id={project.id}
+      className={rowClass}
+      aria-labelledby={`project-${project.id}`}
+    >
       <div className={styles.card}>
         <header className={styles.brand}>
           <div className={styles.brandIcon} aria-hidden="true">

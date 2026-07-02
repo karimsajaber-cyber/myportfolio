@@ -48,13 +48,13 @@ export const projects = [
     tagline:
       "AI-assisted marketplace for connecting clients with trusted service providers.",
     overview:
-      "BrokersHub is a full-stack marketplace for discovering, comparing, and connecting with service providers through a streamlined booking workflow. It combines recommendations, order management, and role-specific dashboards in one product surface.",
+      "BrokersHub is a full-stack marketplace for discovering, comparing, and connecting with service providers through a streamlined booking workflow. It combines recommendations, order management, and role-specific dashboards in one surface.",
     contribution:
       "Led project architecture and implemented core backend and frontend features, with emphasis on scalable workflows, usability, and database design.",
     features: [
       "Reviews and ratings with verified customer feedback",
       "End-to-end booking workflow from request to completion",
-      "End-to-end booking workflow from request to completion",
+      "ٌReal live Chat capability between customer and broker",
       "AI-powered provider chatbot for smarter customer assistance",
       "Built-in real-time chat for seamless client and broker",
       "Smart API integrations with e-commerce like Amazon and Shein",

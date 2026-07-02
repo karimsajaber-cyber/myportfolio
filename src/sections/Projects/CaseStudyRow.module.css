@@ -188,6 +188,7 @@
   margin: 0;
   font-size: var(--text-base);
   line-height: 1.65;
+  text-align: center;
   color: var(--color-text-muted);
 }
 
