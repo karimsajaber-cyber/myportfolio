@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Button from "../../components/ui/Button";
 import { hero, site } from "../../content/site";
 import {
@@ -21,8 +22,55 @@ function scrollToSection(event, href) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function MenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 7h16M4 12h16M4 17h16"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function CloseMenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M6 6l12 12M18 6 6 18"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function Hero() {
   const project = hero.featuredProject;
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileNavOpen) {
+      return undefined;
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setMobileNavOpen(false);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileNavOpen]);
+
+  function handleNavClick(event, href) {
+    scrollToSection(event, href);
+    setMobileNavOpen(false);
+  }
 
   return (
     <section
@@ -43,14 +91,23 @@ export default function Hero() {
               {site.navBrand}
             </a>
 
-            <nav className={styles.nav} aria-label="Primary">
+            <nav
+              id="hero-primary-nav"
+              className={[
+                styles.nav,
+                mobileNavOpen ? styles.navOpen : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              aria-label="Primary"
+            >
               <ul className={styles.navList}>
                 {site.nav.map((item) => (
                   <li key={item.href}>
                     <a
                       href={item.href}
                       className={styles.navLink}
-                      onClick={(event) => scrollToSection(event, item.href)}
+                      onClick={(event) => handleNavClick(event, item.href)}
                     >
                       <span className={styles.navLinkIcon} aria-hidden="true">
                         <HeroNavIcon name={item.icon} />
@@ -69,6 +126,16 @@ export default function Hero() {
                 </span>
                 <span>{site.availability}</span>
               </p>
+              <button
+                type="button"
+                className={styles.menuToggle}
+                onClick={() => setMobileNavOpen((open) => !open)}
+                aria-expanded={mobileNavOpen}
+                aria-controls="hero-primary-nav"
+                aria-label={mobileNavOpen ? "Close menu" : "Open menu"}
+              >
+                {mobileNavOpen ? <CloseMenuIcon /> : <MenuIcon />}
+              </button>
               <Button
                 variant="secondary"
                 href={site.resume.href}
@@ -103,9 +170,11 @@ export default function Hero() {
                   {site.name}
                 </h1>
 
-                <div className={styles.storyBody}>
+                <div className={styles.storyDescription}>
                   <p className={styles.headline}>{hero.headline}</p>
+                </div>
 
+                <div className={styles.storySupporting}>
                   <p className={styles.tagline}>{site.tagline}</p>
 
                   <p className={styles.differentiator}>{site.differentiator}</p>
