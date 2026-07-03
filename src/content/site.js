@@ -6,7 +6,7 @@ export const site = {
   navBrand: "MyPortfolio",
   role: "Product Software Engineer",
   tagline:
-    "Full-stack applications with Python, Django, and React.",
+    "Building modern web applications with Python, Django, and React.",
   differentiator:
     "Bridging engineering excellence with real-world product thinking beyond the codebase\
 building reliable products that balance business goals.",
