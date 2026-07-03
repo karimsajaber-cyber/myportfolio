@@ -18,6 +18,17 @@ export default function EducationCard({ item }) {
       </header>
 
       <p className={styles.description}>{item.description}</p>
+
+      {item.certificatePdf ? (
+        <a
+          href={item.certificatePdf}
+          className={styles.certificateAction}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Certificate
+        </a>
+      ) : null}
     </article>
   );
 }

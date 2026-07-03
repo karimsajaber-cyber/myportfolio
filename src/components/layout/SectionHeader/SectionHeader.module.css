@@ -1,7 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  /* gap: var(--space-4); */
   width: 100%;
   min-width: 0;
 }
@@ -19,7 +19,7 @@
 }
 
 .spacingSection {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .spacingNone {
@@ -65,7 +65,7 @@
 
 .intro {
   width: 100%;
-  margin: 0;
+  margin-top: 10px;
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
   color: var(--color-text-muted);
@@ -77,6 +77,6 @@
   }
 
   .spacingSection {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-5);
   }
 }

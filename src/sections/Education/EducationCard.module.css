@@ -1,5 +1,6 @@
 .card {
   position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -11,14 +12,32 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition:
-    border-color var(--duration-base) var(--ease-out),
-    box-shadow var(--duration-base) var(--ease-out);
+  transform-origin: center center;
+  transition: var(--card-zoom-transition);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("../../assets/featured-card-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card:hover {
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-md);
+  transform: scale(var(--card-zoom-hover));
+  border-color: var(--card-zoom-border-hover);
+  box-shadow: var(--card-zoom-shadow-hover);
 }
 
 .cardAccent {
@@ -44,6 +63,7 @@
   margin: 0;
   width: fit-content;
   max-width: 100%;
+  align-self: center;
   font-size: var(--text-xs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
@@ -68,6 +88,8 @@
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .program {
@@ -76,6 +98,9 @@
   font-weight: var(--weight-medium);
   line-height: var(--leading-snug);
   color: var(--color-text-muted);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .date {
@@ -89,11 +114,38 @@
 
 .description {
   margin: 0;
-  margin-top: auto;
   width: 100%;
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
   color: var(--color-text-muted);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.certificateAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.certificateAction:hover {
+  border-color: var(--color-text-muted);
+  background-color: var(--color-bg);
 }
 
 @media (max-width: 640px) {
@@ -116,5 +168,9 @@
   .card,
   .cardAccent {
     transition: none;
+  }
+
+  .card:hover {
+    transform: none;
   }
 }

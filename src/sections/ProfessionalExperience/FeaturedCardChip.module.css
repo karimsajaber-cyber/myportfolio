@@ -1,0 +1,65 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 1.625rem;
+  height: auto;
+  max-width: 100%;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  color: var(--color-text);
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: var(--skill-chip-transition);
+}
+
+.chip:hover {
+  transform: translateY(var(--skill-chip-lift-hover));
+  background-color: #ffffff;
+  border-color: #c7d6f8;
+  box-shadow: var(--skill-chip-shadow-hover);
+  color: var(--color-primary);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+  transition: var(--skill-icon-transition);
+}
+
+.chip:hover .icon {
+  transform: scale(1.1);
+}
+
+.icon svg {
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.label {
+  line-height: 1.2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .icon {
+    transition: none;
+  }
+
+  .chip:hover {
+    transform: none;
+  }
+
+  .chip:hover .icon {
+    transform: none;
+  }
+}

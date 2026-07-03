@@ -1,12 +1,7 @@
 .section {
-  background-color: var(--color-bg);
-  padding-top: var(--space-6);
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding-top: var(--space-5);
-  }
+  background-color: transparent;
+  text-align: center;
+  font-weight:bold;
 }
 
 .grid {
@@ -17,8 +12,14 @@
 }
 
 .gridItem {
+  position: relative;
+  z-index: 0;
   display: flex;
   min-width: 0;
+}
+
+.gridItem:has(.card:hover) {
+  z-index: 2;
 }
 
 @media (min-width: 768px) {

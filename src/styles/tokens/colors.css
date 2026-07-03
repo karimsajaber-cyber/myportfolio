@@ -1,11 +1,14 @@
 :root {
   /*
-   * Premium palette — warm neutrals tinted toward gold,
-   * deep royal blue primary, restrained champagne gold accent.
+   * Premium palette — warm neutrals with a unified royal blue system.
+   * Primary and accent share the same blue identity across all sections.
    */
 
-  /* Background: warm limestone — softer than clinical #FAFAFA */
-  --color-bg: #f5f3ee;
+  /* Page canvas: soft vertical gradient */
+  --page-bg: linear-gradient(180deg, #f4f8ff 0%, #f9fbfe 35%, #ffffff 100%);
+
+  /* Solid fallback for chips, hovers, and small surfaces */
+  --color-bg: #f9fbfe;
 
   /* Surfaces: clean white for cards and elevated panels */
   --color-surface: #ffffff;
@@ -28,11 +31,10 @@
   --color-primary-soft: rgba(26, 61, 158, 0.08);
 
   /*
-   * Soft Gold: desaturated champagne — accent only.
-   * Avoids brassy/yellow cheapness of brighter golds.
+   * Accent: aligned with primary blue for eyebrows, highlights, and connectors.
    */
-  --color-accent: #b8a078;
-  --color-accent-soft: rgba(184, 160, 120, 0.14);
+  --color-accent: #1a3d9e;
+  --color-accent-soft: rgba(26, 61, 158, 0.12);
 
   /* Warm borders that harmonize with the off-white background */
   --color-border: #e0ddd6;

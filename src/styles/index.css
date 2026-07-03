@@ -5,10 +5,14 @@
 @import "./tokens/motion.css";
 @import "./base/reset.css";
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   font-weight: var(--weight-regular);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background: var(--page-bg);
 }

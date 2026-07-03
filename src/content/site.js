@@ -3,28 +3,33 @@
  */
 export const site = {
   name: "Karim Jaber",
+  navBrand: "MyPortfolio",
   role: "Product Software Engineer",
   tagline:
-    "I design and build full-stack applications with Python, Django, and React.",
+    "Full-stack applications with Python, Django, and React.",
   differentiator:
-    "I build software with the discipline of an engineer and the awareness of how products perform outside the codebase.",
+    "Bridging engineering excellence with real-world product thinking beyond the codebase\
+building reliable products that balance business goals.",
   availability: "Open to new opportunities",
-  email: "",
+  email: "karim.s.a.jaber@gmail.com",
+  linkedin: "https://www.linkedin.com/in/karim-jaber-b90a65125/",
+  github: "https://github.com/karimsajaber-cyber",
 
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Contact", href: "#contact" },
+    { label: "Core Capabilities", href: "#capabilities", icon: "about" },
+    { label: "Experience", href: "#experience", icon: "experience" },
+    { label: "Contact", href: "#contact", icon: "contact" },
+    { label: "Core Projects", href: "#projects", icon: "projects" },
   ],
 
   resume: {
     label: "Resume",
-    href: "#downloads",
+    href: "/Karim-Jaber-CV.pdf"
   },
 };
 
 export const hero = {
-  headline: "I build full-stack products with engineering discipline and product awareness.",
+  headline: "I build full-stack products with engineering discipline and product insight that solve real business problems across diverse industries.",
   primaryCta: {
     label: "View my work",
     href: "#projects",

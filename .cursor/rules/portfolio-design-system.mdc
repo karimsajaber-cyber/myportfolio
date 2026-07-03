@@ -1,0 +1,85 @@
+---
+description: Portfolio design system — Hero & Case Studies visual language for all new sections
+globs: src/sections/**/*,src/content/**/*,src/styles/**/*
+alwaysApply: true
+---
+
+# Portfolio Design System
+
+Every **new** section must match Hero and Case Studies. Do **not** redesign Hero, Case Studies, or other existing sections unless explicitly asked.
+
+## Reference implementations
+
+- **Hero:** `src/sections/Hero/Hero.module.css` — composition card, nav, typography, fade-up
+- **Case Studies:** `src/sections/Projects/CaseStudyRow.module.css` — card grid, chips, actions, spacing
+- **Tokens:** `src/styles/tokens/` — colors, spacing, typography, motion, layout
+
+## Principles
+
+Premium SaaS landing page feel: clean, readable, professional, minimal noise. One cohesive product—not independent blocks.
+
+## Color
+
+- Use only the existing blue palette (`--color-primary`, `--color-primary-soft`, `--color-accent-soft`)
+- Warm neutrals for bg/surface/text (`--color-bg`, `--color-surface`, `--color-text`, `--color-text-muted`)
+- **No** new accent colors (no purple, green, orange, or random gradients)
+- Soft blue tints only via `color-mix` or `--color-primary-soft` on surfaces
+
+## Cards
+
+Match Case Study / Hero composition:
+
+```css
+background-color: color-mix(in srgb, var(--color-surface) 94%, var(--color-primary-soft));
+border: 1px solid var(--color-border);
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-sm);
+padding: var(--space-5); /* var(--space-6) on lg */
+```
+
+Hover: `border-color: var(--color-border-strong); box-shadow: var(--shadow-md);`
+
+Chips: reuse Case Study `.techChip` pattern (surface bg, border, `--radius-sm`, `--text-xs`).
+
+## Typography
+
+- Heading font: `var(--font-heading)` (Sora), body: `var(--font-body)` (Inter)
+- Section titles via `SectionHeader`; card titles use `--weight-semibold`, `--leading-snug`, `--tracking-tight`
+- Do not invent new heading sizes or styles—mirror Hero / Case Studies hierarchy
+
+## Spacing
+
+- Section shell: `Section` + `Container` + `SectionHeader`
+- Section padding: `--section-padding-y` / `--section-padding-y-mobile`
+- Inter-section rhythm: `--space-5`–`--space-6` header margins; use `--space-*` scale only
+- Avoid large empty gaps; keep vertical rhythm consistent with Projects / Research
+
+## Animation
+
+Subtle only; respect `prefers-reduced-motion`:
+
+- Fade up: `opacity 0 → 1`, `translateY(0.5rem → 0)`, `--duration-slow`, `--ease-out`
+- Soft hover on cards/chips/buttons
+- No dramatic motion, bounce, or flashy effects
+
+## Layout & responsive
+
+- Desktop / tablet / mobile must stay visually balanced
+- Two-column layouts collapse cleanly (stack content → visual)
+- Reuse existing breakpoints: 640px, 768px, 1024px
+
+## Components
+
+- Buttons: `src/components/ui/Button` with icon + label (see Case Study actions)
+- Content: colocate copy in `src/content/`
+- CSS Modules per section; no inline styles or one-off color hex values
+
+## Checklist (new section)
+
+- [ ] Uses design tokens only
+- [ ] Card matches glass-adjacent surface + border + shadow pattern
+- [ ] Typography matches Hero / Case Studies
+- [ ] Spacing uses `--space-*` and shared section layout
+- [ ] Subtle fade-up entrance; hover elevation on cards
+- [ ] Responsive at 640 / 768 / 1024
+- [ ] No new accent colors or flashy animation

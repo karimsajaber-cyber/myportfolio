@@ -1,36 +1,38 @@
+import { site } from "./site";
+
 /**
- * Contact — replace placeholders with real details when ready.
+ * Contact — reach-out links for the Let's Start a Conversation section.
  */
 export const contactSection = {
   eyebrow: "Contact",
   title: "Let's Start a Conversation",
   intro:
-    "[Paragraph placeholder — a brief, welcoming line on how visitors can reach you.]",
+    "Have a project, opportunity, or question? I'd love to hear from you",
 };
 
 export const contactLinks = [
   {
     id: "email",
     label: "Email",
-    value: "[Email placeholder]",
-    href: "#",
+    value: site.email,
+    href: `mailto:${site.email}`,
   },
   {
     id: "linkedin",
     label: "LinkedIn",
-    value: "[LinkedIn placeholder]",
-    href: "#",
+    value: "linkedin.com/in/karim-jaber-b90a65125",
+    href: site.linkedin,
   },
   {
     id: "github",
     label: "GitHub",
-    value: "[GitHub placeholder]",
-    href: "#",
+    value: "github.com/karimsajaber-cyber",
+    href: site.github,
   },
   {
     id: "resume",
     label: "Resume",
-    value: "[Resume placeholder]",
-    href: "#downloads",
+    value: "Karim-Jaber-CV.pdf",
+    href: site.resume.href,
   },
 ];

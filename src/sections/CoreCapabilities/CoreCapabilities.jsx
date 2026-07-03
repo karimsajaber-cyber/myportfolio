@@ -6,6 +6,7 @@ import {
   capabilitiesSection,
 } from "../../content/capabilities";
 import CapabilityIcon from "./CapabilityIcon";
+import { SkillChipIcon } from "../ProfessionalExperience/FeaturedCardIcons";
 import styles from "./CoreCapabilities.module.css";
 
 export default function CoreCapabilities() {
@@ -44,10 +45,26 @@ export default function CoreCapabilities() {
                   </p>
                 </div>
 
-                <ul className={styles.itemList} aria-label={`${capability.title} skills`}>
+                <ul
+                  className={[
+                    styles.itemList,
+                    capability.skillsColumns === 3
+                      ? styles.itemListCols3
+                      : styles.itemListCols2,
+                    capability.skillsTextCenter ? styles.itemListTextCenter : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  aria-label={`${capability.title} skills`}
+                >
                   {capability.items.map((item) => (
-                    <li key={item}>
-                      <span className={styles.item}>{item}</span>
+                    <li key={item} className={styles.itemListEntry}>
+                      <span className={styles.item}>
+                        <span className={styles.itemIcon} aria-hidden="true">
+                          <SkillChipIcon label={item} />
+                        </span>
+                        <span className={styles.itemLabel}>{item}</span>
+                      </span>
                     </li>
                   ))}
                 </ul>
