@@ -4,12 +4,11 @@
 export const site = {
   name: "Karim Jaber",
   navBrand: "MyPortfolio",
-  role: "Product Software Engineer",
+  role: "Full-Stack Product & Support Engineer",
   tagline:
-    "Building modern web applications with Python, Django, and React.",
+    "Building reliable web products with Python, Django, React, AI, and SQL.",
   differentiator:
-    "Bridging engineering excellence with real-world product thinking beyond the codebase\
-building reliable products that balance business goals.",
+    "Beyond the codebase, I bridge engineering, product thinking, and customer-facing support—diagnosing issues, documenting solutions, and helping teams move from problems to clear, usable products.",
   availability: "Open to new opportunities",
   email: "karim.s.a.jaber@gmail.com",
   linkedin: "https://www.linkedin.com/in/karim-jaber-b90a65125/",
@@ -29,7 +28,7 @@ building reliable products that balance business goals.",
 };
 
 export const hero = {
-  headline: "I build full-stack products with engineering discipline and product insight that solve real business problems across diverse industries.",
+  headline: "I combine full-stack development with customer-facing technical support to build user-focused web applications, solve real business problems, and turn complex workflows into reliable digital solutions.",
   primaryCta: {
     label: "View my work",
     href: "#projects",
