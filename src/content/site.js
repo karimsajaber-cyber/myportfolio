@@ -6,7 +6,7 @@ export const site = {
   navBrand: "MyPortfolio",
   role: "Full-Stack Product & Support Engineer",
   tagline:
-    "Building reliable web products with Python, Django, React, AI, and SQL.",
+    "Building reliable web products with Python, Django, React, REST APIs, SQL, and AI-assisted workflows.",
   differentiator:
     "Beyond the codebase, I bridge engineering, product thinking, and customer-facing support—diagnosing issues, documenting solutions, and helping teams move from problems to clear, usable products.",
   availability: "Open to new opportunities",
