@@ -277,44 +277,21 @@
   height: 0.875rem;
   margin-top: 0.1rem;
   flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 2.5px;
-  --capability-icon-bg: var(--color-primary-soft);
-  --capability-icon-stroke: color-mix(in srgb, var(--color-primary) 48%, #b8c9e8);
-  --capability-icon-fill: color-mix(in srgb, var(--color-primary) 22%, #ffffff);
-  background-color: var(--capability-icon-bg);
+  color: color-mix(in srgb, var(--color-primary) 52%, #5a6b88);
   transition:
     var(--skill-icon-transition),
-    background-color var(--duration-base) var(--ease-out);
+    color var(--duration-base) var(--ease-out);
 }
 
 .item:hover .itemIcon {
   transform: scale(1.1);
-  --capability-icon-stroke: color-mix(in srgb, var(--color-primary) 62%, #b8c9e8);
-  --capability-icon-fill: color-mix(in srgb, var(--color-primary) 34%, #ffffff);
+  color: var(--color-primary);
 }
 
 .itemIcon svg {
   display: block;
   width: 0.875rem;
   height: 0.875rem;
-}
-
-/* Business Analysis tone: soft tile + light blue glyph (not heavy primary fill) */
-.itemIcon svg > rect[width="16"][height="16"] {
-  fill: transparent !important;
-}
-
-.itemIcon svg [stroke]:not([stroke="none"]) {
-  stroke: var(--capability-icon-stroke) !important;
-}
-
-.itemIcon svg [fill]:not([fill="none"]) {
-  fill: var(--capability-icon-fill) !important;
-}
-
-.itemIcon svg text {
-  fill: var(--capability-icon-stroke) !important;
 }
 
 @media (max-width: 640px) {

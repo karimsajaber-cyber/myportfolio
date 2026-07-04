@@ -6,7 +6,7 @@ import {
   capabilitiesSection,
 } from "../../content/capabilities";
 import CapabilityIcon from "./CapabilityIcon";
-import { SkillChipIcon } from "../ProfessionalExperience/FeaturedCardIcons";
+import CapabilitySkillIcon from "./CapabilitySkillIcon";
 import styles from "./CoreCapabilities.module.css";
 
 export default function CoreCapabilities() {
@@ -61,7 +61,7 @@ export default function CoreCapabilities() {
                     <li key={item} className={styles.itemListEntry}>
                       <span className={styles.item}>
                         <span className={styles.itemIcon} aria-hidden="true">
-                          <SkillChipIcon label={item} />
+                          <CapabilitySkillIcon label={item} />
                         </span>
                         <span className={styles.itemLabel}>{item}</span>
                       </span>

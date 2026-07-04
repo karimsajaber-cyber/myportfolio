@@ -312,6 +312,7 @@ function RecommendationForm({
 export default function AskBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [introPulseActive, setIntroPulseActive] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [phonePopupMessageId, setPhonePopupMessageId] = useState(null);
   const [isRecommendationOpen, setIsRecommendationOpen] = useState(false);
@@ -473,6 +474,7 @@ export default function AskBot() {
   }
 
   function togglePanel() {
+    setIntroPulseActive(false);
     setIsOpen((current) => {
       if (current) {
         resetChat();
@@ -663,17 +665,31 @@ export default function AskBot() {
         </div>
       ) : null}
 
-      <button
-        type="button"
-        className={styles.launcher}
-        onClick={togglePanel}
-        aria-expanded={isOpen}
-        aria-controls="askbot-panel"
-        aria-label="Ask Karim"
+      <div
+        className={[
+          styles.launcherWrap,
+          isOpen || !introPulseActive ? styles.isActive : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
-        <ChatIcon />
-        <span>Ask Karim</span>
-      </button>
+        <span className={styles.pulseRing} aria-hidden="true" />
+        <span
+          className={`${styles.pulseRing} ${styles.pulseRingDelay}`}
+          aria-hidden="true"
+        />
+        <button
+          type="button"
+          className={styles.launcher}
+          onClick={togglePanel}
+          aria-expanded={isOpen}
+          aria-controls="askbot-panel"
+          aria-label="Ask Karim"
+        >
+          <ChatIcon />
+          <span>Ask Karim</span>
+        </button>
+      </div>
     </div>
   );
 }
