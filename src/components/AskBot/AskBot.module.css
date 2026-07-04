@@ -59,6 +59,7 @@
 
 .launcherWrap:not(.isActive) .launcher {
   animation: askBotButtonBreath 2.4s ease-in-out infinite;
+  transform-origin: center center;
 }
 
 .launcher {
@@ -783,13 +784,15 @@
 @keyframes askBotButtonBreath {
   0%,
   100% {
-    transform: scale(1);
-    box-shadow: 0 18px 42px rgba(37, 99, 235, 0.22);
+    transform: scale(1) translateY(0);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.28);
   }
 
   50% {
-    transform: scale(1.055);
-    box-shadow: 0 22px 56px rgba(37, 99, 235, 0.34);
+    transform: scale(1.09) translateY(-4px);
+    box-shadow:
+      0 30px 68px rgba(15, 23, 42, 0.42),
+      0 14px 32px rgba(37, 99, 235, 0.3);
   }
 }
 
